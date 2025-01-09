@@ -1,0 +1,5 @@
+# encoding: utf-8
+
+# 上のコメント行をつけないと、下の定義の中で日本語が使えません。
+
+require 'users.schema.rb'

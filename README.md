@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 立ち上げコマンド
+* サーバ立ち上げ
+bundle exec rails s
 
-Things you may want to cover:
+* コンソール立ち上げ
+bundle exec rails c
 
-* Ruby version
+## ridgepole実行コマンド
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* テーブル追加・カラムの追加
+bundle exec ridgepole --config config/database.yml --env development --file db/Schemafile --apply
