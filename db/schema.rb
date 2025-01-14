@@ -9,3 +9,5 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+
+# ridgepoleを使用しているため、このファイルは基本的に使用しない方針。
