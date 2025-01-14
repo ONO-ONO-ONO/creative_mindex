@@ -7,6 +7,7 @@ require "users.schema.rb"
 require "animals.schema.rb" # 動物マスタ
 require "domains.schema.rb" # ドメインマスタ
 require "kingdoms.schema.rb" # 界(かい)マスタ
+require "super_phylums.schema.rb" # 上門(じょうもん)マスタ
 require "phylums.schema.rb" # 門(もん)マスタ
 require "sub_phylums.schema.rb" # 亜門(あもん)マスタ
 require "super_classes.schema.rb" # 上綱(じょうこう)マスタ
