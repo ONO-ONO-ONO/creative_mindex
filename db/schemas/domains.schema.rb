@@ -1,6 +1,8 @@
 create_table :domains, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
   t.string :name, null: false # 名前
-  t.string :code, null: false # コード
+  t.string :eng_name # 英名
+  t.integer :code, null: false # コード
+  t.boolean :major_flg, null: false, default: true # メジャーフラグ
 end
 
 # 生物分類学において、ドメイン（英: domain、羅: regio）は、
