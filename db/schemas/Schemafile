@@ -9,10 +9,15 @@ require "domains.schema.rb" # ドメインマスタ
 require "kingdoms.schema.rb" # 界(かい)マスタ
 require "phylums.schema.rb" # 門(もん)マスタ
 require "sub_phylums.schema.rb" # 亜門(あもん)マスタ
+require "super_classes.schema.rb" # 上綱(じょうこう)マスタ
 require "classes.schema.rb" # 綱(こう)マスタ
 require "sub_classes.schema.rb" # 亜綱(あこう)マスタ
+require "infra_classes.schema.rb" # 下綱(かこう)マスタ
+require "super_orders.schema.rb" # 上目(じょうもく)マスタ
 require "orders.schema.rb" # 目(もく)マスタ
 require "sub_orders.schema.rb" # 亜目(あもく)マスタ
+require "infra_orders.schema.rb" # 下目(かもく)マスタ
+require "super_families.schema.rb" # 科(か)マスタ
 require "families.schema.rb" # 科(か)マスタ
 require "sub_families.schema.rb" # 亜科(あか)マスタ
 require "genuses.schema.rb" # 属(ぞく)マスタ

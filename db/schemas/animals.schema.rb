@@ -9,17 +9,27 @@ create_table :animals, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_
   t.float :weight # 体重(kg)
 
   t.integer :domain_code # ドメイン
+
   t.integer :kingdom_code # 界(かい)
+
   t.integer :phylum_code # 門(もん)
   t.integer :sub_phylum_code # 亜門(あもん)
+
+  t.integer :super_class_code # 上綱(じょうこう)
   t.integer :class_code # 綱(こう)
   t.integer :sub_class_code # 亜綱(あこう)
+  t.integer :infra_class_code # 下綱(かこう)
+
   t.integer :order_code # 目(もく)
   t.integer :sub_order_code # 亜目(あもく)
+
+  t.integer :super_family_code # 上科(じょうか)
   t.integer :family_code # 科(か)
   t.integer :sub_family_code # 亜科(あか)
+
   t.integer :genus_code # 属(ぞく)
   t.integer :sub_genus_code # 亜属(あぞく)
+
   t.integer :species_code # 種(しゅ)
   t.integer :sub_species_code # 亜種(あしゅ)
 
