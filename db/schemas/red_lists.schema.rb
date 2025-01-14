@@ -4,6 +4,7 @@ create_table :red_lists, force: :cascade, charset: "utf8mb4", collation: "utf8mb
   t.integer :code, null: false # コード
   t.integer :parent_code # 親コード
   t.boolean :major_flg, null: false, default: true # メジャーフラグ
+  t.integer :sort # ソート
 end
 
 # レッドリスト（Red List）

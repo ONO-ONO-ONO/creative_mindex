@@ -4,6 +4,7 @@ create_table :kingdoms, force: :cascade, charset: "utf8mb4", collation: "utf8mb4
   t.integer :code, null: false # コード
   t.integer :parent_code # 親コード
   t.boolean :major_flg, null: false, default: true # メジャーフラグ
+  t.integer :sort # ソート
 end
 
 # 界（かい、英: kingdom、羅: regnum）は、

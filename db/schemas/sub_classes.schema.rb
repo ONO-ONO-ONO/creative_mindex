@@ -4,6 +4,7 @@ create_table :sub_classes, force: :cascade, charset: "utf8mb4", collation: "utf8
   t.integer :code, null: false # コード
   t.integer :parent_code # 親コード
   t.boolean :major_flg, null: false, default: true # メジャーフラグ
+  t.integer :sort # ソート
 end
 
 # 亜綱（あこう、英: subclass、羅: subclassis）は、

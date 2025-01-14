@@ -4,6 +4,7 @@ create_table :classes, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_
   t.integer :code, null: false # コード
   t.integer :parent_code # 親コード
   t.boolean :major_flg, null: false, default: true # メジャーフラグ
+  t.integer :sort # ソート
 end
 
 # 綱（こう、英: class、羅: classis）は、
