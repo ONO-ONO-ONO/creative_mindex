@@ -1,6 +1,6 @@
 create_table :orders, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
-  t.string  :name, null: false # 名前
-  t.integer :code, null: false # コード
+  t.string :name, null: false # 名前
+  t.string :code, null: false # コード
 end
 
 # 目（もく、英: order、羅: ordo）は、
