@@ -42,6 +42,7 @@ gem "thruster", require: false
 
 # 追加gem ============================
 gem "ridgepole"
+gem "seed-fu"
 
 # ====================================
 
