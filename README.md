@@ -15,5 +15,5 @@ bundle exec rails c
 
 * テーブル追加・カラムの追加
 ```
-bundle exec ridgepole --config config/database.yml --env development --file db/Schemafile --apply
+bundle exec ridgepole --config config/database.yml --env development --file db/schemas/Schemafile --apply
 ```
