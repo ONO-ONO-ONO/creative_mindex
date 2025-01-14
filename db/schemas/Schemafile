@@ -4,3 +4,19 @@
 
 require "tests.schema.rb"
 require "users.schema.rb"
+require "animals.schema.rb" # 動物マスタ
+require "domains.schema.rb" # ドメインマスタ
+require "kingdoms.schema.rb" # 界(かい)マスタ
+require "phylums.schema.rb" # 門(もん)マスタ
+require "sub_phylums.schema.rb" # 亜門(あもん)マスタ
+require "classes.schema.rb" # 綱(こう)マスタ
+require "sub_classes.schema.rb" # 亜綱(あこう)マスタ
+require "orders.schema.rb" # 目(もく)マスタ
+require "sub_orders.schema.rb" # 亜目(あもく)マスタ
+require "families.schema.rb" # 科(か)マスタ
+require "sub_families.schema.rb" # 亜科(あか)マスタ
+require "genuses.schema.rb" # 属(ぞく)マスタ
+require "sub_genuses.schema.rb" # 亜属(あぞく)マスタ
+require "species.schema.rb" # 種(しゅ)マスタ
+require "sub_species.schema.rb" # 亜種(あしゅ)マスタ
+require "red_lists.schema.rb" # レッドリストマスタ
