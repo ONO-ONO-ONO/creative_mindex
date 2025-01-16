@@ -380,7 +380,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  better_errors
+  better_errors (~> 2.10.1)
   bootsnap
   brakeman
   capybara
@@ -391,11 +391,11 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
-  ridgepole
+  ridgepole (~> 3.0.0)
   rubocop-rails-omakase
-  seed-fu
+  seed-fu (~> 2.3.9)
   selenium-webdriver
-  slim
+  slim (~> 5.2.1)
   solid_cable
   solid_cache
   solid_queue
