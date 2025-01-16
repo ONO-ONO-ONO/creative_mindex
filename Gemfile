@@ -41,9 +41,18 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # 追加gem ============================
-gem "ridgepole"
-gem "seed-fu"
-gem "slim"
+gem "ridgepole", "~> 3.0.0"
+gem "seed-fu", "~> 2.3.9"
+gem "slim", "~> 5.2.1"
+gem "better_errors", "~> 2.10.1"
+gem "binding_of_caller", "~> 1.0.1"
+
+# bootstrap & scss系
+gem "bootstrap", "~> 5.3.0"
+gem "jquery-rails"
+gem "sprockets-rails", "~> 3.4.2"
+gem "sprockets", "~> 3.7.3"
+gem "sass-rails", "~> 6.0.0"
 
 # ====================================
 

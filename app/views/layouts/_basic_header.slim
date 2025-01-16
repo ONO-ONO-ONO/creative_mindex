@@ -1,0 +1,11 @@
+= stylesheet_link_tag 'basic_header', media: 'all', 'data-turbo-track': 'reload'
+
+header.basic-header
+  .top-title
+    = link_to "Mindex", "/", class: "header-link"
+
+  .top-list
+    div
+      = link_to "動物図鑑", "/", class: "header-link"
+    div
+      = link_to "パラメータ一覧", "/", class: "header-link"

@@ -1,0 +1,16 @@
+.top {
+  height: 87.3vh;
+  box-sizing: border-box;
+  background-color:gray; /*背景色指定*/
+  background-image: url("/images/top.jpg");
+  background-repeat:no-repeat; /*背景画像の繰り返しを解除*/
+  background-size: 100%;
+}
+
+.title {
+  text-align: center;
+  padding-top: 150px;
+  font-size: 40px;
+  color: aliceblue;
+  font-weight: bold;
+}
