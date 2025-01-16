@@ -44,6 +44,7 @@ gem "thruster", require: false
 gem "ridgepole"
 gem "seed-fu"
 gem "slim"
+gem "better_errors"
 
 # ====================================
 
