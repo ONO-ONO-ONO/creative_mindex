@@ -28,3 +28,11 @@ html
       = render "layouts/basic_header"
 
     = yield
+
+    / / 背景画像
+    / - if request.path_info = "/"
+    /   = stylesheet_link_tag "top", media: "all", "data-turbo-track": "reload"
+    /   .top
+    /     = yield
+    / - else
+    /   = yield

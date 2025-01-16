@@ -2,10 +2,15 @@
    /* ヘッダーを画面上部に固定する */
   position: sticky;
   top: 0;
-
   height: 70px; /* ヘッダー高さ */
-  background-color: #2C3240; /* ヘッダー背景色 */
   display: flex; /* 子要素を横並びにする */
+  background-color: #291c0e; /* ヘッダー背景色 */
+  /*
+    474333 茶色
+    291c0e 濃い茶色
+    07383F 濃い青緑
+    2C3240 濃いグレー
+  */
 }
 
 .top-title {
@@ -13,7 +18,7 @@
   padding-left: 10px;
   color: aliceblue;
   font-size: 30px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .top-list {
