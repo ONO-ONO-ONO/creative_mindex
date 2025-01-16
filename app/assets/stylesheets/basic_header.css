@@ -9,7 +9,36 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+/* html {
+  position: relative;
+  min-height: 100%;
+} */
+
+/* body {
+  margin: 0px;
+} */
+
 body {
   padding: 0px;
   margin: 0px;
+}
+
+.basic-header {
+  /* margin: 0px; */
+  position: sticky;
+  top: 0;
+  background-color: #2C3240;
+  height: 100px;
+
+  color: aliceblue;
+
+  display: flex;
+}
+
+.top-title {
+  padding-top: 10px;
+  padding-left: 10px;
+  color: aliceblue;
+  font-size: 40px;
+  font-weight:bold;
 }

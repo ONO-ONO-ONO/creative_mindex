@@ -1,0 +1,50 @@
+/ Start header
+= stylesheet_link_tag 'basic_header', media: 'all', 'data-turbo-track': 'reload'
+
+header.basic-header
+  .top-title
+    = "Mindex"
+
+  .top-list
+    li
+      = link_to "テスト1", "/"
+    li
+      = link_to "テスト2", "/"
+  / nav.navbar.navbar-default.navbar-fixed-top
+  /   .container-fluid
+  /     / Brand and toggle get grouped for better mobile display
+  /     .navbar-header
+  /       button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+  /         span.sr-only Toggle navigation
+  /         span.icon-bar
+  /         span.icon-bar
+  /         span.icon-bar
+  /       = link_to "アプリロゴ", "/", class: "navbar-brand"
+
+  /     / Collect the nav links, forms, and other content for toggling
+  /     .collapse.navbar-collapse id="bs-example-navbar-collapse-1"
+  /       ul.nav.navbar-nav.navbar-right
+  /         li
+  /           = link_to "ページ1", "/"
+
+          / li.dropdown
+          /   a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+          /     | メニュー
+          /     span.caret
+          /   ul.dropdown-menu
+          /     li
+          /       = link_to "ページ2", "/"
+          /     li
+          /       = link_to "ページ3", "/"
+          / - user_signed_in = true
+          / - if user_signed_in
+          /   li
+          /     = link_to 'プロフィール', "/"
+          /   li
+          /     = link_to 'ログアウト', "/", method: :delete
+          / - else
+          /   li
+          /     = link_to 'ログイン', "/"
+          /   li
+          /     = link_to 'サインアップ', "/"
+/ //END header
