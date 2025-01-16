@@ -107,7 +107,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.3.4)
+    concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
     date (3.4.1)
@@ -161,7 +161,7 @@ GEM
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
-    logger (1.6.4)
+    logger (1.6.5)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -269,7 +269,7 @@ GEM
     reline (0.6.0)
       io-console (~> 0.5)
     rexml (3.4.0)
-    ridgepole (3.0.0)
+    ridgepole (3.0.1)
       activerecord (>= 6.1, < 8.1)
       diffy
       logger
@@ -421,7 +421,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
-  ridgepole (~> 3.0.0)
+  ridgepole (~> 3.0.1)
   rubocop-rails-omakase
   sass-rails (~> 6.0.0)
   seed-fu (~> 2.3.9)
