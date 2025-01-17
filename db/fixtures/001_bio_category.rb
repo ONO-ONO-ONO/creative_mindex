@@ -145,7 +145,7 @@ Order.seed(
 )
 
 # 亜目(あもく)
-Order.seed(
+SubOrder.seed(
   { id: 1, name: "ネコ亜目", eng_name: "feliformia", code: "aO10100", parent_code: "O10100" },
 )
 
