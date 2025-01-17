@@ -27,7 +27,7 @@ Animal.seed(
     class_code: "C10100", # 綱(こう)
     sub_class_code: "", # 亜綱(あこう)
     infra_class_code: "", # 下綱(かこう)
-    super_code: "", # 上目(じょうもく)
+    super_order_code: "", # 上目(じょうもく)
     order_code: "O10100", # 目(もく)
     sub_order_code: "aG10100", # 亜目(あもく)
     super_family_code: "", # 上科(じょうか)
@@ -46,7 +46,7 @@ Animal.seed(
     scientific_name: "Canis lupus familiaris", # 学名
     wa_name: "イエイヌ", # 和名
     kanji_name: "犬", # 和名
-    avg_long: nil, # 平均_体長(cm) (尾を含めない)
+    avg_long: 38.5, # 平均_体長(cm) (尾を含めない)
     min_long: 15, # 最小_体長(cm) (尾を含めない)
     max_long: 84, # 最大_体長(cm) (尾を含めない)
     avg_long_tail: 40, # 平均_尾長(cm)
@@ -55,7 +55,7 @@ Animal.seed(
     avg_tall: nil, # 平均_体高(cm)
     min_tall: 35, # 最小_体高(cm)
     max_tall: 50, # 最大_体高(cm)
-    avg_weight: nil, # 平均_体重(kg)
+    avg_weight: 10, # 平均_体重(kg)
     min_weight: 1.4, # 最小_体重(kg)
     max_weight: 110, # 最大_体重(kg)
     domain_code: "D10", # ドメイン
@@ -67,7 +67,7 @@ Animal.seed(
     class_code: "C10100", # 綱(こう)
     sub_class_code: "", # 亜綱(あこう)
     infra_class_code: "", # 下綱(かこう)
-    super_code: "", # 上目(じょうもく)
+    super_order_code: "", # 上目(じょうもく)
     order_code: "O10100", # 目(もく)
     sub_order_code: "", # 亜目(あもく)
     super_family_code: "", # 上科(じょうか)
@@ -95,7 +95,7 @@ Animal.seed(
     avg_tall: nil, # 平均_体高(cm)
     min_tall: nil, # 最小_体高(cm)
     max_tall: nil, # 最大_体高(cm)
-    avg_weight: nil, # 平均_体重(kg)
+    avg_weight: 0.024, # 平均_体重(kg)
     min_weight: 0.018, # 最小_体重(kg)
     max_weight: 0.027, # 最大_体重(kg)
     domain_code: "D10", # ドメイン
@@ -107,7 +107,7 @@ Animal.seed(
     class_code: "C10101", # 綱(こう)
     sub_class_code: "", # 亜綱(あこう)
     infra_class_code: "", # 下綱(かこう)
-    super_code: "", # 上目(じょうもく)
+    super_order_code: "", # 上目(じょうもく)
     order_code: "O10201", # 目(もく)
     sub_order_code: "", # 亜目(あもく)
     super_family_code: "", # 上科(じょうか)

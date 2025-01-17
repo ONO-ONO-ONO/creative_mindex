@@ -30,9 +30,10 @@ create_table :animals, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_
   t.string :sub_class_code # 亜綱(あこう)
   t.string :infra_class_code # 下綱(かこう)
 
-  t.string :super_code # 上目(じょうもく)
+  t.string :super_order_code # 上目(じょうもく)
   t.string :order_code # 目(もく)
   t.string :sub_order_code # 亜目(あもく)
+  t.string :infra_order_code # 下目(かもく)
 
   t.string :super_family_code # 上科(じょうか)
   t.string :family_code # 科(か)
