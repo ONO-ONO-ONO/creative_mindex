@@ -1,0 +1,17 @@
+table.table
+  thead
+    tr
+      th 名前
+      th 分類
+      th 体長(cm)
+      th 体重(kg)
+
+  tbody
+    - @animals.each do |animal|
+      tr
+        td = animal.name
+        td = animal.category_all
+        td = "約#{animal.avg_long ? animal.avg_long : (animal.min_long + animal.max_long) / 2}cm"
+        td = "約#{animal.avg_weight ? animal.avg_weight : (animal.min_weight + animal.max_weight) / 2}kg"
+        / td = spot.introduction
+/ img src="https://pbs.twimg.com/media/Ghes8eRacAEOW7B?format=jpg" alt=""
