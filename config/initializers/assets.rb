@@ -14,4 +14,5 @@ Rails.application.config.assets.precompile += %w[
 
   basic_header.css
   top.css
+  animals/index.css
 ]
