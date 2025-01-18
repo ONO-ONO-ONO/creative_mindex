@@ -1,0 +1,15 @@
+= stylesheet_link_tag "animals/form", media: "all", "data-turbo-track": "reload"
+.animal-form
+  .title
+    = @form_title
+
+  / h3.card-title.text-center.mb-4.mt-1 新規登録
+
+  = form_with model: @animal, url: animals_path, local: true do |f|
+    div
+      = f.label :name
+      = f.text_field :name
+    div
+      = f.label :name
+      = f.text_area :name
+    = f.submit "投稿する"

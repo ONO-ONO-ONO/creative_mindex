@@ -2,10 +2,14 @@
 
 .animal-index
   .title 動物図鑑
+  .form-btn
+    button.normal-btn
+      = link_to "新規作成", "animals/new", class: "no-underbar-link"
   table.table
     thead
       tr
         th 名前
+        th
         th 分類
         th 体長(cm)
         th 体重(kg)
@@ -14,6 +18,9 @@
       - @animals.each do |animal|
         tr
           td = animal.name
+          td
+            button.normal-btn
+              = link_to "詳細", "animals/#{animal.id}/edit", class: "no-underbar-link"
           td = animal.category_short
           td = "約#{animal.avg_long ? animal.avg_long : (animal.min_long + animal.max_long) / 2}cm"
           td = "約#{animal.avg_weight ? animal.avg_weight : (animal.min_weight + animal.max_weight) / 2}kg"

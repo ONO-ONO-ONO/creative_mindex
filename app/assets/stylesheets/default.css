@@ -1,0 +1,12 @@
+/* リンク文字の下線削除 */
+.no-underbar-link {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* デフォルトボタン */
+.normal-btn {
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+}

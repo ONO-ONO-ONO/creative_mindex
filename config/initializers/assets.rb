@@ -12,7 +12,9 @@ Rails.application.config.assets.precompile += %w[
   controllers/hello_controller.js
   controllers/index.js
 
+  default.css
   basic_header.css
   top.css
   animals/index.css
+  animals/form.css
 ]
