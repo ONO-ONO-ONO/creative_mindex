@@ -11,6 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 0) do
+  create_table "animal_images", force: :cascade do |t|
+    t.integer "animal_id", null: false
+    t.string "img_url", null: false
+    t.integer "sort"
+    t.boolean "main_flg", default: false, null: false
+    t.boolean "icon_flg", default: false, null: false
+  end
+
   create_table "animals", force: :cascade do |t|
     t.string "name", null: false
     t.string "scientific_name"

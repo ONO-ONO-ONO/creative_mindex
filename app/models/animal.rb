@@ -24,6 +24,7 @@ class Animal < ApplicationRecord
   has_one :species, foreign_key: :code, primary_key: :species_code
   has_one :sub_species, foreign_key: :code, primary_key: :sub_species_code
   has_one :red_list, foreign_key: :code, primary_key: :red_list_code
+  has_many :animal_image, foreign_key: :animal_id, primary_key: :id
 
   # カテゴリー(全掲載)
   def category_all
@@ -61,5 +62,15 @@ class Animal < ApplicationRecord
     category_short += self.species&.name.to_s if self.species_code.present? && self.sub_species_code.blank?
     category_short += self.sub_species&.name.to_s if self.sub_species_code.present?
     category_short
+  end
+
+  # メイン画像取得
+  def get_main_image
+    self.animal_image&.find_by(main_flg: true)&.img_url
+  end
+
+  # 一覧アイコン画像取得
+  def get_icon_image
+    self.animal_image&.find_by(icon_flg: true)&.img_url
   end
 end
