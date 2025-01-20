@@ -1,5 +1,5 @@
 .top {
-  height: 87.3vh;
+  height: 90.95vh;
   box-sizing: border-box;
   background-color:gray; /*背景色指定*/
   background-image: url("/images/top.jpg");
@@ -9,8 +9,8 @@
 
 .title {
   text-align: center;
-  padding-top: 150px;
-  font-size: 40px;
+  padding-top: 180px;
+  font-size: 50px;
   color: aliceblue;
   font-weight: bold;
 }
