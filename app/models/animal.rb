@@ -64,13 +64,31 @@ class Animal < ApplicationRecord
     category_short
   end
 
+  # 平均の体長取得
+  def get_ave_long
+    if self.avg_long.present?
+      self.avg_long
+    elsif self.min_long.present? && self.max_long.present?
+      (self.min_long + self.max_long) / 2
+    end
+  end
+
+  # 平均の体重取得
+  def get_ave_weight
+    if self.avg_weight.present?
+      self.avg_weight
+    elsif self.min_weight.present? && self.max_weight.present?
+      (self.min_weight + self.max_weight) / 2
+    end
+  end
+
   # メイン画像取得
-  def get_main_image
+  def get_main_img_url
     self.animal_image&.find_by(main_flg: true)&.img_url
   end
 
   # 一覧アイコン画像取得
-  def get_icon_image
+  def get_icon_img_url
     self.animal_image&.find_by(icon_flg: true)&.img_url
   end
 end

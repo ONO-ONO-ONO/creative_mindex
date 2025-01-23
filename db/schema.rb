@@ -22,6 +22,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
   create_table "animals", force: :cascade do |t|
     t.string "name", null: false
     t.string "scientific_name"
+    t.string "eng_name"
     t.string "wa_name"
     t.string "kanji_name"
     t.float "avg_long"

@@ -1,4 +1,4 @@
-.basic-header {
+.basic_header {
    /* ヘッダーを画面上部に固定する */
   position: sticky;
   top: 0;
@@ -13,7 +13,7 @@
   */
 }
 
-.top-title {
+.top_title {
   padding-top: 5px;
   padding-left: 10px;
   color: aliceblue;
@@ -21,13 +21,13 @@
   font-weight: bold;
 }
 
-.top-list {
+.top_list {
   margin-left: 1090px;
   padding-top: 4px;
   font-size: 14px;
 }
 
-.header-link {
+.header_link {
   text-decoration: none;
   color: aliceblue;
 }

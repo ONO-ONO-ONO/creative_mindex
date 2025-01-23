@@ -20,7 +20,7 @@ Kingdom.seed(
 
 # 上門(じょうもん)
 SuperPhylum.seed(
-  { id: 1, name: "新口動物", eng_name: "deuterostomia", code: "uP1010", parent_code: "ak10", major_flg: true, sort: 100 },
+  { id: 1, name: "新口動物", eng_name: "deuterostomia", code: "uP1010", parent_code: "k10", major_flg: true, sort: 100 },
   { id: 1, name: "脱皮動物", eng_name: "ecdysozoa", code: "uP1020", parent_code: "k10", major_flg: true, sort: 100 },
   { id: 1, name: "冠輪動物", eng_name: "lophotrochozoan", code: "uP1030", parent_code: "k10", major_flg: true, sort: 100 },
 )
@@ -184,15 +184,15 @@ SubSpecies.seed(
 
 # レッドリスト
 RedList.seed(
-  { id: 1, name: "低危険種", big_name: "低リスク", code: "LC", sort: 10 },
-  { id: 2, name: "準絶滅危惧", big_name: "低リスク", code: "NT", sort: 11 },
-  { id: 3, name: "保全対策依存", big_name: "低リスク", code: "CD", sort: 12 },
-  { id: 4, name: "危急", big_name: "絶滅危惧", code: "VU", sort: 20 },
-  { id: 5, name: "絶滅危惧", big_name: "絶滅危惧", code: "EN", sort: 21 },
-  { id: 6, name: "絶滅寸前 ", big_name: "絶滅危惧", code: "CR", sort: 22 },
-  { id: 7, name: "野生絶滅", big_name: "絶滅", code: "EW", sort: 30 },
-  { id: 8, name: "絶滅", big_name: "絶滅", code: "EX", sort: 31 },
-  { id: 9, name: "データ不足", big_name: "その他", code: "DD", sort: 40 },
-  { id: 10, name: "未評価", big_name: "その他", code: "NE", sort: 41 },
-  { id: 11, name: "架空", big_name: "架空", code: "FC", sort: 90 },
+  { id: 1, name: "LC: 低危険種", big_name: "低リスク", code: "LC", sort: 10 },
+  { id: 2, name: "NT: 準絶滅危惧", big_name: "低リスク", code: "NT", sort: 11 },
+  { id: 3, name: "CD: 保全対策依存", big_name: "低リスク", code: "CD", sort: 12 },
+  { id: 4, name: "VU: 危急", big_name: "絶滅危惧", code: "VU", sort: 20 },
+  { id: 5, name: "EN: 絶滅危惧", big_name: "絶滅危惧", code: "EN", sort: 21 },
+  { id: 6, name: "CR: 絶滅寸前 ", big_name: "絶滅危惧", code: "CR", sort: 22 },
+  { id: 7, name: "EW: 野生絶滅", big_name: "絶滅", code: "EW", sort: 30 },
+  { id: 8, name: "EX: 絶滅", big_name: "絶滅", code: "EX", sort: 31 },
+  { id: 9, name: "DD: データ不足", big_name: "その他", code: "DD", sort: 40 },
+  { id: 10, name: "NE: 未評価", big_name: "その他", code: "NE", sort: 41 },
+  { id: 11, name: "FC: 架空", big_name: "架空", code: "FC", sort: 90 },
 )

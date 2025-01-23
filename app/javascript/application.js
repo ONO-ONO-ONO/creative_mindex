@@ -5,3 +5,5 @@
 //= require bootstrap
 import "@hotwired/turbo-rails"
 import "controllers"
+// import Turbolinks from "turbolinks";
+// Turbolinks.start();

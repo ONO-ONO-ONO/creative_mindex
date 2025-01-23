@@ -17,4 +17,5 @@ Rails.application.config.assets.precompile += %w[
   top.css
   animals/index.css
   animals/form.css
+  animals/show.css
 ]

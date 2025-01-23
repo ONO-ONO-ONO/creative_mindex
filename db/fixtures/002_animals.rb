@@ -4,6 +4,7 @@ Animal.seed(
     id: 1,
     name: "イエネコ", # 名前
     scientific_name: "Felis silvestris catus", # 学名
+    eng_name: "Cat", # 英名
     wa_name: "イエネコ", # 和名
     kanji_name: "猫", # 和名
     avg_long: 75, # 平均_体長(cm) (尾を含めない)
@@ -44,6 +45,7 @@ Animal.seed(
     id: 2,
     name: "イエイヌ", # 名前
     scientific_name: "Canis lupus familiaris", # 学名
+    eng_name: "Dog", # 英名
     wa_name: "イエイヌ", # 和名
     kanji_name: "犬", # 和名
     avg_long: 38.5, # 平均_体長(cm) (尾を含めない)
@@ -84,6 +86,7 @@ Animal.seed(
     id: 3,
     name: "スズメ", # 名前
     scientific_name: "Passer montanus", # 学名
+    eng_name: "Sparrow", # 英名
     wa_name: "スズメ", # 和名
     kanji_name: "雀", # 和名
     avg_long: nil, # 平均_体長(cm) (尾を含めない)
