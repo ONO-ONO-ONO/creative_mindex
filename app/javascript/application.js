@@ -3,7 +3,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-import "@hotwired/turbo-rails"
+
+// import { Turbo } from "@hotwired/turbo-rails"
+// import { Turbo } from "turbo"
 import "controllers"
-// import Turbolinks from "turbolinks";
-// Turbolinks.start();
+import "@hotwired/turbo-rails"
+

@@ -26,6 +26,9 @@ class Animal < ApplicationRecord
   has_one :red_list, foreign_key: :code, primary_key: :red_list_code
   has_many :animal_image, foreign_key: :animal_id, primary_key: :id
 
+  # バリデーション
+  validates :name, presence: true
+
   # カテゴリー(全掲載)
   def category_all
     category_all = ""

@@ -3,7 +3,7 @@
   .title
     = @form_title
 
-  = form_with model: @animal do |f|
+  = form_with model: @animal, local: true, data: { turbo: false } do |f|
     .default_form
       .info
         - if @select_tab == "basic"
@@ -12,68 +12,67 @@
               .basic_info ■基本情報
               .default_form_division
                 .default_form_cell
-                  = f.label "名前"
-                  = f.text_field :name, class: "form-control", placeholder: "必須"
-                .default_form_cell
-                  = f.label "学名"
-                  = f.text_field :scientific_name, class: "form-control", placeholder: ""
+                  = render "/component/text_field", model: @animal, column: "name", class: "", placeholder: "必須", f: f
               .default_form_division
                 .default_form_cell
-                  = f.label "和名"
-                  = f.text_field :wa_name, class: "form-control", placeholder: ""
+                  = render "/component/text_field", model: @animal, column: "eng_name", class: "", placeholder: "", f: f
                 .default_form_cell
-                  = f.label "漢名"
-                  = f.text_field :kanji_name, class: "form-control", placeholder: ""
+                  = render "/component/text_field", model: @animal, column: "scientific_name", class: "", placeholder: "", f: f
+              .default_form_division
+                .default_form_cell
+                  = render "/component/text_field", model: @animal, column: "wa_name", class: "", placeholder: "", f: f
+                .default_form_cell
+                  = render "/component/text_field", model: @animal, column: "kanji_name", class: "", placeholder: "", f: f
 
               .info_line
               .status_info ■身体情報
               .default_form_division
                 .default_form_cell
-                  = f.label "体重_平均(kg)"
+                  = f.label :avg_weight
                   = f.number_field :avg_weight, class: "form-control", placeholder: ""
               .default_form_division
                 .default_form_cell_to_min
-                  = f.label "体重_最小(kg)"
+                  = f.label :min_weight
                   = f.number_field :min_weight, class: "form-control", id: "status_type", placeholder: ""
                 .form_to ～
                 .default_form_cell_to_max
-                  = f.label "体重_最大(kg)"
+                  = f.label :max_weight
                   = f.number_field :max_weight, class: "form-control", id: "status_type", placeholder: ""
               .default_form_division
                 .default_form_cell
-                  = f.label "体長_平均(cm)"
+                  = f.label :avg_long
                   = f.number_field :avg_long, class: "form-control", placeholder: ""
               .default_form_division
                 .default_form_cell_to_min
-                  = f.label "体長_最小(cm)"
+                  = f.label :min_long
                   = f.number_field :min_long, class: "form-control", id: "status_type", placeholder: ""
                 .form_to ～
                 .default_form_cell_to_max
-                  = f.label "体長_最大(cm)"
+                  = f.label :max_long
                   = f.number_field :max_long, class: "form-control", id: "status_type", placeholder: ""
               .default_form_division
                 .default_form_cell
-                  = f.label "尾長_平均(cm)"
+                  = f.label :avg_long_tail
                   = f.number_field :avg_long_tail, class: "form-control", placeholder: ""
               .default_form_division
                 .default_form_cell_to_min
-                  = f.label "尾長_最小(cm)"
+                  = f.label :min_long_tail
                   = f.number_field :min_long_tail, class: "form-control", id: "status_type", placeholder: ""
                 .form_to ～
                 .default_form_cell_to_max
-                  = f.label "尾長_最大(cm)"
+                  = f.label :max_long_tail
                   = f.number_field :max_long_tail, class: "form-control", id: "status_type", placeholder: ""
               .default_form_division
                 .default_form_cell
-                  = f.label "体高_平均(cm)"
+                  = f.label :avg_tall
                   = f.number_field :avg_tall, class: "form-control", placeholder: ""
               .default_form_division
                 .default_form_cell_to_min
-                  = f.label "体高_最小(cm)"
+                  = f.label :min_tall
                   = f.number_field :min_tall, class: "form-control", id: "status_type", placeholder: ""
                 .form_to ～
                 .default_form_cell_to_max
-                  = f.label "体高_最大(cm)"
+                  = f.label :max_tall
                   = f.number_field :max_tall, class: "form-control", id: "status_type", placeholder: ""
 
           .default_form_box.column2
@@ -81,63 +80,63 @@
               .basic_info ■分類
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "ドメイン"
-                  = f.collection_select :domain_code, Domain.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "domain_code", array: Domain.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "レッドリスト"
-                  = f.collection_select :red_list_code, RedList.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "red_list_code", array: RedList.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "界"
-                  = f.collection_select :kingdom_code, Kingdom.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "kingdom_code", array: Kingdom.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "門"
-                  = f.collection_select :phylum_code, Phylum.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "phylum_code", array: Phylum.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜門"
-                  = f.collection_select :sub_phylum_code, SubPhylum.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_phylum_code", array: SubPhylum.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "綱"
-                  = f.collection_select :class_code, Classes.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "class_code", array: Classes.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜綱"
-                  = f.collection_select :sub_class_code, SubClasses.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_class_code", array: SubClasses.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "下綱"
-                  = f.collection_select :infra_class_code, InfraClasses.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "infra_class_code", array: InfraClasses.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "目"
-                  = f.collection_select :order_code, Order.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "order_code", array: Order.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜目"
-                  = f.collection_select :sub_order_code, SubOrder.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_order_code", array: SubOrder.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "下目"
-                  = f.collection_select :infra_order_code, InfraOrder.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "infra_order_code", array: InfraOrder.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "科"
-                  = f.collection_select :family_code, Family.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "family_code", array: Family.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜科"
-                  = f.collection_select :sub_family_code, SubFamily.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_family_code", array: SubFamily.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "属"
-                  = f.collection_select :genus_code, Genuses.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "genus_code", array: Genuses.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜属"
-                  = f.collection_select :sub_genus_code, SubGenuses.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_genus_code", array: SubGenuses.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
               .default_form_division
                 .default_form_cell.column2_form
-                  = f.label "種"
-                  = f.collection_select :species_code, Species.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "species_code", array: Species.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
                 .default_form_cell.column2_form
-                  = f.label "亜種"
-                  = f.collection_select :sub_species_code, SubSpecies.all, :code, :name, { prompt: "--------選択--------" }, class: "form-control"
+                  = render "/component/collection_select", model: @animal, column: "sub_species_code", array: SubSpecies.all,
+                    set_code: "code", set_name: "name", prompt: "--------選択--------", class: "", f: f
 
               .info_line
               .status_info ■説明情報
@@ -148,7 +147,8 @@
 
     .return_btn_area
       .normal_btn2.form_return_submit_btn
-        = link_to "戻る", "/animals", class: "no_underbar_link"
+        - return_link = action_name == "new" ? "/animals" : "/animals/#{@animal.id}"
+        = link_to "戻る", return_link, class: "no_underbar_link"
 
     .submit_btn_area
       = f.submit "保存", class: "normal_submit_btn"

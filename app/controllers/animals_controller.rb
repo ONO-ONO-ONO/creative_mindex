@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  layout "application" # レイアウトを明示的に指定
+
   def index
     @index_type = "list"
     @animals = Animal.all
@@ -12,10 +14,12 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    if @animal.save!
+    if @animal.save
       redirect_to animal_path(@animal.id)
     else
-      render :new
+      @form_title = "新規作成"
+      @select_tab = "basic"
+      render :new # def create内の@~~をビューに渡す
     end
   end
 
@@ -32,7 +36,14 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    aaaaaaaaaaaa
+    @animal = Animal.find(params[:id])
+    if @animal.update(animal_params)
+      redirect_to animal_path(@animal.id), notice: "更新が成功しました" # 更新成功時
+    else
+      @form_title = "編集"
+      @select_tab = "basic"
+      render :edit # def create内の@~~をビューに渡す
+    end
   end
 
   def delete

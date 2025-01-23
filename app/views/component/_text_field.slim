@@ -1,0 +1,8 @@
+- if model.errors.include?(column.to_sym)
+  = f.label column.to_sym, class: "error_message"
+  = f.text_field column.to_sym, class: "form-control #{}", placeholder: placeholder
+  .error_message
+    = "#{t('activerecord.attributes.animal.name')} #{model.errors[column.to_sym][0]}"
+- else
+  = f.label column.to_sym
+  = f.text_field column.to_sym, class: "form-control #{}", placeholder: placeholder

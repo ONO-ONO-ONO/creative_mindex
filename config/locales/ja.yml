@@ -1,0 +1,51 @@
+ja:
+  activerecord:
+    attributes:
+      animal:
+        name: "名前"
+        scientific_name: "学名"
+        eng_name: "英名"
+        wa_name: "和名"
+        kanji_name: "漢名"
+        avg_long: "体長 平均(cm)"
+        min_long: "体長 最小(cm)"
+        max_long: "体長 最大(cm)"
+        avg_long_tail: "尾長 平均(cm)"
+        min_long_tail: "尾長 最小(cm)"
+        max_long_tail: "尾長 最大(cm)"
+        avg_tall: "体高 平均(cm)"
+        min_tall: "体高 最小(cm)"
+        max_tall: "体高 最大(cm)"
+        avg_weight: "体重 平均(kg)"
+        min_weight: "体重 最小(kg)"
+        max_weight: "体重 最大(kg)"
+        domain_code: "ドメイン"
+        kingdom_code: "界"
+        super_phylum_code: "上門"
+        phylum_code: "門"
+        sub_phylum_code: "亜門"
+        super_class_code: "上綱"
+        class_code: "綱"
+        sub_class_code: "亜綱"
+        infra_class_code: "下綱"
+        super_order_code: "上目"
+        order_code: "目"
+        sub_order_code: "亜目"
+        infra_order_code: "下目"
+        super_family_code: "上科"
+        family_code: "科"
+        sub_family_code: "亜科"
+        genus_code: "属"
+        sub_genus_code: "亜属"
+        species_code: "種"
+        sub_species_code: "亜種"
+        red_list_code: "レッドリスト"
+        note: "説明"
+    errors:
+      models:
+        animal:
+          attributes:
+            name:
+              blank: "は必須です"
+      messages:
+        taken: "はすでに存在します"

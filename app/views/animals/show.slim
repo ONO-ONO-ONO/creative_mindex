@@ -37,21 +37,21 @@
             .another_name_area
               .another_name_title.red_list_title
                 = "レッドリスト"
-              - if @animal.red_list.big_name == "低リスク"
+              - if @animal.red_list&.big_name == "低リスク"
                 .red_list_name.label_green
-                  = @animal.red_list.name
-              - elsif @animal.red_list.big_name == "絶滅危惧"
+                  = @animal.red_list&.name
+              - elsif @animal.red_list&.big_name == "絶滅危惧"
                 .red_list_name.label_yellow
-                  = @animal.red_list.name
-              - elsif @animal.red_list.big_name == "絶滅"
+                  = @animal.red_list&.name
+              - elsif @animal.red_list&.big_name == "絶滅"
                 .red_list_name.label_red
-                  = @animal.red_list.name
-              - elsif @animal.red_list.big_name == "その他"
+                  = @animal.red_list&.name
+              - elsif @animal.red_list&.big_name == "その他"
                 .red_list_name.label_blue
-                  = @animal.red_list.name
+                  = @animal.red_list&.name
               - else
                 .red_list_name
-                  = @animal.red_list.name
+                  = @animal.red_list&.name
 
             .another_name_area
               .another_name
