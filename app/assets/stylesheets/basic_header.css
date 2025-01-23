@@ -1,4 +1,5 @@
 .basic_header {
+  z-index: 100;
    /* ヘッダーを画面上部に固定する */
   position: sticky;
   top: 0;
@@ -22,7 +23,7 @@
 }
 
 .top_list {
-  margin-left: 1090px;
+  margin-left: 1060px;
   padding-top: 4px;
   font-size: 14px;
 }

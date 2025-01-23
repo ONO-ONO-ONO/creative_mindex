@@ -1,4 +1,5 @@
 .title {
+  z-index: 10;
   padding-top: 10px;
   padding-bottom: 14px;
   padding-left: 10px;
@@ -80,15 +81,33 @@ input[type="text"][class="column2_text_field"]{
 }
 
 .return_btn_area {
+  z-index: 20;
   position: fixed;
   top: 58px;
   left: 1114px;
 }
 
 .submit_btn_area {
+  z-index: 20;
   position: fixed;
   top: 58px;
   left: 1180px;
+}
+
+.modal_master_btn_area {
+  width: 35px;
+  font-size: 12px;
+  position: relative;
+  top: -60px;
+  left: 184px;
+}
+.modal_master_btn {
+  text-align: center;
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 20px; /* ボタンの角丸 */
+  cursor: pointer;
+  color: aliceblue;
 }
 
 .form_return_submit_btn {

@@ -1,2 +1,5 @@
 = f.label column.to_sym
-= f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{}"
+= f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{ classes }"
+
+.modal_master_btn_area
+  = render partial: "/component/modal_master", locals: { master: master }

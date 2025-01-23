@@ -1,0 +1,18 @@
+/ モーダルのHTML
+.modal.fade id="#{master}" tabindex="-1" aria-labelledby="#{master}Label" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title id="#{master}"
+          - title_master = "activerecord.models.#{master}"
+          = "#{t(title_master)} 新規作成"
+        button.btn-close type="button" data-bs-dismiss="modal" aria-label="Close"
+      .modal-body
+        モーダルのコンテンツがここに入ります。
+      .modal-footer
+        button.btn.btn-secondary type="button" data-bs-dismiss="modal" 閉じる
+        button.btn.btn-primary type="button" 保存
+
+/ モーダルを開くボタン
+.modal_master_btn data-bs-toggle="modal" data-bs-target="##{master}"
+  = "Add"
