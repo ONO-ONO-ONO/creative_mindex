@@ -80,6 +80,13 @@ input[type="text"][class="column2_text_field"]{
   }
 }
 
+.modal_master_btn_area {
+  position: absolute;
+  top: 124px;
+  left: 488px;
+  font-size: 13px;
+}
+
 .return_btn_area {
   z-index: 20;
   position: fixed;
@@ -94,13 +101,6 @@ input[type="text"][class="column2_text_field"]{
   left: 1180px;
 }
 
-.modal_master_btn_area {
-  width: 35px;
-  font-size: 12px;
-  position: relative;
-  top: -60px;
-  left: 184px;
-}
 .modal_master_btn {
   text-align: center;
   background: #648877; /* ボタンの色 */
