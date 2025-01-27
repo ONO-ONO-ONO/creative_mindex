@@ -82,7 +82,7 @@ input[type="text"][class="column2_text_field"]{
 
 .modal_master_btn_area {
   position: absolute;
-  top: 124px;
+  top: 125.5px;
   left: 488px;
   font-size: 13px;
 }
@@ -102,10 +102,11 @@ input[type="text"][class="column2_text_field"]{
 }
 
 .modal_master_btn {
+  padding: 0px 6px;
   text-align: center;
   background: #648877; /* ボタンの色 */
   border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
-  border-radius: 20px; /* ボタンの角丸 */
+  border-radius: 8px; /* ボタンの角丸 */
   cursor: pointer;
   color: aliceblue;
 }

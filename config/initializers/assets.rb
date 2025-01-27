@@ -21,4 +21,5 @@ Rails.application.config.assets.precompile += %w[
   animals/index.css
   animals/form.css
   animals/show.css
+  animals/modal_master.css
 ]

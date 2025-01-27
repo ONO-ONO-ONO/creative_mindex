@@ -1,6 +1,2 @@
-/ 近々本ファイル消すかも
-/ = f.label column.to_sym
-/ = f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{ classes }"
-
-= f.label :domain_id
-= f.collection_select :domain_id, Domain.all, :code, :name, { prompt: "prompt" }, class: "form-control"
+= f.label column.to_sym
+= f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{ classes }"

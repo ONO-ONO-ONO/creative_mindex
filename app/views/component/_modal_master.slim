@@ -1,35 +1,3 @@
-/ / モーダルのHTML
-/ .modal.fade id="#{master}" tabindex="-1" aria-labelledby="#{master}Label" aria-hidden="true"
-/   .modal-dialog
-/     .modal-content
-/       = form_with url: save_category_modal_animals_path, method: :post, local: true, data: { turbo_frame: "domain-select-frame" } do |f_modal|
-/         .modal-header
-/           h5.modal-title id="#{master}"
-/             - title_master = "activerecord.models.#{master}"
-/             = "#{t(title_master)} 新規作成"
-/           button.btn-close type="button" data-bs-dismiss="modal" aria-label="Close"
-/         .modal-body
-/           / モーダルのコンテンツがここに入ります。
-/           = hidden_field_tag :authenticity_token, form_authenticity_token
-
-/           = f_modal.label :name, "名前"
-/           = f_modal.text_field :name, class: "form-control"
-
-/           = f_modal.label :code, "コード"
-/           = f_modal.text_area :code, class: "form-control"
-
-/           / = f_modal.submit "保存", class: "btn btn-primary mt-2",
-
-/         .modal-footer
-/           button.btn.btn-secondary type="button" data-bs-dismiss="modal"
-/           button.btn.btn-primary type="button" data-bs-dismiss="modal"
-/             = f_modal.submit "保存", class: "btn btn-primary mt-2", data: { turbo_stream: true }
-
-/ / モーダルを開くボタン
-/ .modal_master_btn data-bs-toggle="modal" data-bs-target="##{master}"
-/   = "Add"
-
-
 / モーダルのHTML
 .modal.fade id="master" tabindex="-1" aria-labelledby="masterLabel" aria-hidden="true"
   .modal-dialog
@@ -43,23 +11,24 @@
           / モーダルのコンテンツがここに入ります。
           = hidden_field_tag :authenticity_token, form_authenticity_token
 
-          = f_modal.label "作成マスタ"
-          = f_modal.collection_select :master_selecta, master_selecta, :value, :name, { prompt: "--------選択--------" }, class: "form-control"
-          / = f_modal.select :master_selecta, master_selecta, class: "form-control"
+          .default_form
+            .default_form_division
+              .default_form_cell
+                = f_modal.label "作成するマスター"
+                = f_modal.collection_select :master_selecta, master_selecta, :value, :name, {}, class: "form-control"
 
-          = f_modal.label :name, "名前"
-          = f_modal.text_field :name, class: "form-control"
+            .default_form_division
+              .default_form_cell
+                = f_modal.label :name, "名前"
+                = f_modal.text_field :name, class: "form-control", placeholder: "必須"
+              .default_form_cell
+                = f_modal.label :code, "英名"
+                = f_modal.text_field :code, class: "form-control"
 
-          = f_modal.label :code, "コード"
-          = f_modal.text_area :code, class: "form-control"
-
-          / = f_modal.submit "保存", class: "btn btn-primary mt-2",
-
-        .modal-footer
-          button.btn.btn-secondary type="button" data-bs-dismiss="modal"
-          button.btn.btn-primary type="button" data-bs-dismiss="modal"
-            = f_modal.submit "保存", class: "btn btn-primary mt-2", data: { turbo_stream: true }
+        .modal-footer.modal_master_footer
+          button.btn type="button" data-bs-dismiss="modal"
+            = f_modal.submit "保存", class: "modal_master_submit_btn", data: { turbo_stream: true }
 
 / モーダルを開くボタン
-.modal_master_btn data-bs-toggle="modal" data-bs-target="#master"
+.modal_master_btn.modal_master_add_btn_area data-bs-toggle="modal" data-bs-target="#master"
   = "Add"

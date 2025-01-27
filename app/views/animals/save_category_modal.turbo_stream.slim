@@ -1,5 +1,5 @@
 = turbo_stream.replace "domain-select-frame", partial: "domain_select", locals: { master: master, master_table: master_table, form_object: form_object }
 
 / 以下同文
-/ = turbo_stream.replace "#{master}-select-frame" do
-/   = render partial: "#{master}_select", locals: { form_object: form_object }
+/ = turbo_stream.replace "domain-select-frame" do
+/   = render partial: "domain_select", locals: { master: master, master_table: master_table, form_object: form_object }
