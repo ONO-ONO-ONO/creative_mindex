@@ -64,11 +64,29 @@ ja:
         sub_species_code: 亜種
         red_list_code: レッドリスト
         note: 説明
+      domain:
+        name: 名前
+        eng_name: 英名
+        code: コード
+        major_flg: メジャーフラグ
+        sort: ソート
     errors:
       models:
         animal:
           attributes:
             name:
               blank: は必須です
+        domain:
+          attributes:
+            name:
+              blank: は必須です
+            code:
+              blank: は必須です
+            major_flg:
+              blank: は必須です
       messages:
         taken: はすでに存在します
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+  errors:
+    messages:
+      record_invalid: "バリデーションに失敗しました: %{errors}"

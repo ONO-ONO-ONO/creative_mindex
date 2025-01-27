@@ -1,5 +1,6 @@
-= f.label column.to_sym
-= f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{ classes }"
+/ 近々本ファイル消すかも
+/ = f.label column.to_sym
+/ = f.collection_select column.to_sym, array, set_code.to_sym, set_name.to_sym, { prompt: prompt }, class: "form-control #{ classes }"
 
-.modal_master_btn_area
-  = render partial: "/component/modal_master", locals: { master: master }
+= f.label :domain_id
+= f.collection_select :domain_id, Domain.all, :code, :name, { prompt: "prompt" }, class: "form-control"

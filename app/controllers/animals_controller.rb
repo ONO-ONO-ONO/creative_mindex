@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
-  layout "application" # レイアウトを明示的に指定
+  include CategoryModal # Concernsを読み込む
+  before_action :set_master_selecta, only: [ :new, :edit ]
 
   def index
     @index_type = "list"
@@ -47,6 +48,31 @@ class AnimalsController < ApplicationController
   end
 
   def delete
+  end
+
+  def set_master_selecta
+    @master_selecta = [
+      { name: "ドメイン", value: "Domain" },
+      { name: "界", value: "Kingdom" },
+      { name: "上門", value: "SuperPhylum" },
+      { name: "門", value: "Phylum" },
+      { name: "亜門", value: "SumPhylum" }
+    ].map { |item| OpenStruct.new(item) }
+  end
+
+  def save_category_modal
+    # ToDo: 各カテゴリー事に受け取ることを想定とした作りに直す
+    items = {
+      name: params["name"],
+      eng_name: "abc",
+      code: params["code"],
+      major_flg: true,
+      sort: 10
+    }
+
+    master_selecta = params
+
+    category_create(items, master_selecta)
   end
 
   private

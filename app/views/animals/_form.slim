@@ -1,10 +1,12 @@
 = stylesheet_link_tag "animals/form", media: "all", "data-turbo-track": "reload"
 - prompt_default = "-----------選択-----------"
+- form_object = @animal
+
 .animal-form
   .title
     = @form_title
 
-  = form_with model: @animal, local: true, data: { turbo: false } do |f|
+  = form_with model: form_object, local: true, data: { turbo: false } do |f|
     .default_form
       .info
         - if @select_tab == "basic"
@@ -81,199 +83,205 @@
               .basic_info ■分類
               .default_form_division
                 .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "domain_code",
-                      array: Domain.all,
-                      master: "domain",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f}
+                  turbo-frame id="domain-select-frame"
+                    = render partial: 'domain_select', locals: { master: "domain", master_table: "Domain", form_object: form_object }
+                    / = render partial: "/component/collection_select",
+                    /   locals: { model: @animal,
+                    /     column: "domain_code",
+                    /     array: Domain.all,
+                    /     master: "domain",
+                    /     set_code: "code",
+                    /     set_name: "name",
+                    /     prompt: prompt_default,
+                    /     classes: "",
+                    /     f: f}
                 .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "red_list_code",
-                      array: RedList.all,
-                      master: "red_list",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
+                  turbo-frame id="domain-select-frame"
+                    = render partial: 'domain_select', locals: { master: "red_list", master_table: "RedList", form_object: form_object }
+                  / = render partial: "/component/collection_select",
+                  /   locals: { model: @animal,
+                  /     column: "red_list_code",
+                  /     array: RedList.all,
+                  /     master: "red_list",
+                  /     set_code: "code",
+                  /     set_name: "name",
+                  /     prompt: prompt_default,
+                  /     classes: "",
+                  /     f: f }
               .default_form_division
                 .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "kingdom_code",
-                      array: Kingdom.all,
-                      master: "kingdom",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "phylum_code",
-                      array: Phylum.all,
-                      master: "phylum",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_phylum_code",
-                      array: SubPhylum.all,
-                      master: "sub_phylum",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "class_code",
-                      array: Classes.all,
-                      master: "classes",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_class_code",
-                      array: SubClasses.all,
-                      master: "sub_classes",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "infra_class_code",
-                      array: InfraClasses.all,
-                      master: "infra_classes",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "order_code",
-                      array: Order.all,
-                      master: "order",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_order_code",
-                      array: SubOrder.all,
-                      master: "sub_order",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "infra_order_code",
-                      array: InfraOrder.all,
-                      master: "infra_order",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "family_code",
-                      array: Family.all,
-                      master: "family",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_family_code",
-                      array: SubFamily.all,
-                      master: "sub_family",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "genus_code",
-                      array: Genuses.all,
-                      master: "genuses",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_genus_code",
-                      array: SubGenuses.all,
-                      master: "sub_genuses",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-              .default_form_division
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "species_code",
-                      array: Species.all,
-                      master: "species",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
-                .default_form_cell.column2_form
-                  = render partial: "/component/collection_select",
-                    locals: { model: @animal,
-                      column: "sub_species_code",
-                      array: SubSpecies.all,
-                      master: "sub_species",
-                      set_code: "code",
-                      set_name: "name",
-                      prompt: prompt_default,
-                      classes: "",
-                      f: f }
+                  turbo-frame id="domain-select-frame"
+                    = render partial: 'domain_select', locals: { master: "kingdom", master_table: "Kingdom", form_object: form_object }
+                  / = render partial: "/component/collection_select",
+                  /   locals: { model: @animal,
+                  /     column: "kingdom_code",
+                  /     array: Kingdom.all,
+                  /     master: "kingdom",
+                  /     set_code: "code",
+                  /     set_name: "name",
+                  /     prompt: prompt_default,
+                  /     classes: "",
+                  /     f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "phylum_code",
+              /         array: Phylum.all,
+              /         master: "phylum",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_phylum_code",
+              /         array: SubPhylum.all,
+              /         master: "sub_phylum",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "class_code",
+              /         array: Classes.all,
+              /         master: "classes",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_class_code",
+              /         array: SubClasses.all,
+              /         master: "sub_classes",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "infra_class_code",
+              /         array: InfraClasses.all,
+              /         master: "infra_classes",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "order_code",
+              /         array: Order.all,
+              /         master: "order",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_order_code",
+              /         array: SubOrder.all,
+              /         master: "sub_order",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "infra_order_code",
+              /         array: InfraOrder.all,
+              /         master: "infra_order",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "family_code",
+              /         array: Family.all,
+              /         master: "family",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_family_code",
+              /         array: SubFamily.all,
+              /         master: "sub_family",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "genus_code",
+              /         array: Genuses.all,
+              /         master: "genuses",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_genus_code",
+              /         array: SubGenuses.all,
+              /         master: "sub_genuses",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              / .default_form_division
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "species_code",
+              /         array: Species.all,
+              /         master: "species",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
+              /   .default_form_cell.column2_form
+              /     = render partial: "/component/collection_select",
+              /       locals: { model: @animal,
+              /         column: "sub_species_code",
+              /         array: SubSpecies.all,
+              /         master: "sub_species",
+              /         set_code: "code",
+              /         set_name: "name",
+              /         prompt: prompt_default,
+              /         classes: "",
+              /         f: f }
 
               .info_line
               .status_info ■説明情報
@@ -289,3 +297,7 @@
 
     .submit_btn_area
       = f.submit "保存", class: "normal_submit_btn"
+
+  .modal_master_btn_area
+    / = render partial: "/component/modal_master", locals: { master: "domain" }
+    = render partial: "/component/modal_master", locals: { master_selecta: @master_selecta }
