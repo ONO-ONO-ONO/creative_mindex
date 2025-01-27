@@ -1,0 +1,59 @@
+.name {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.eng_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.another_name_area {
+  padding-top: 10px;
+  display: flex; /* 子要素を横並びにする */
+}
+.another_name_title {
+  padding: 2px 6px;
+  font-weight: bold;
+  border-radius: 6px;
+  background: #ced7be;
+  border: 1px solid #ced7be;
+}
+.red_list_title {
+  background: #e2e2e2;
+  border: 1px solid #e2e2e2;
+}
+.another_name {
+  padding: 2px 0px;
+  padding-left: 4px;
+  font-weight: bold;
+}
+.red_list_name {
+  padding: 2px 8px;
+  margin-left: 8px;
+  font-weight: bold;
+  border-radius: 20px;
+  background: #e2e2e2;
+  border: 1px solid #e2e2e2;
+}
+
+.label_green {
+  background: #e3ecc2;
+  border: 1px solid #e3ecc2;
+}
+.label_yellow {
+  background: #f5f2c7;
+  border: 1px solid #f5f2c7;
+}
+.label_orange {
+  background: #f5e1c0;
+  border: 1px solid #f5e1c0;
+}
+.label_red {
+  background: #f5c1c0;
+  border: 1px solid #f5c1c0;
+}
+.label_blue {
+  background: #c4e9ff;
+  border: 1px solid #c4e9ff;
+}

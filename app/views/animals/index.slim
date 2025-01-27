@@ -1,11 +1,15 @@
 = stylesheet_link_tag "animals/index", media: "all", "data-turbo-track": "reload"
 
-.animal-index
+.animal_index
   .title 動物図鑑
+  .form_btn
+    button.normal_btn1
+      = link_to "新規作成", "/animals/new", class: "no_underbar_link"
   table.table
     thead
       tr
         th 名前
+        th
         th 分類
         th 体長(cm)
         th 体重(kg)
@@ -14,6 +18,11 @@
       - @animals.each do |animal|
         tr
           td = animal.name
+          td
+            button.normal_btn2.index_btn_area
+              = link_to "詳細", "/animals/#{animal.id}", class: "no_underbar_link"
+            button.normal_btn1.index_btn_area
+              = link_to "編集", "/animals/#{animal.id}/edit", class: "no_underbar_link"
           td = animal.category_short
-          td = "約#{animal.avg_long ? animal.avg_long : (animal.min_long + animal.max_long) / 2}cm"
-          td = "約#{animal.avg_weight ? animal.avg_weight : (animal.min_weight + animal.max_weight) / 2}kg"
+          td = "約#{animal.get_ave_long}cm"
+          td = "約#{animal.get_ave_weight}kg"

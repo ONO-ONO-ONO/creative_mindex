@@ -30,6 +30,16 @@ rails db:seed_fu
 rails db:seed_fu FIXTURE_PATH=db/fixtures/hogehoge
 ```
 
+* プリコンパイルを手動で実行
+```
+rails assets:precompile
+```
+
+* プリコンパイルを手動で削除する
+```
+rails assets:clobber
+```
+
 ## DB変更系
 
 * DB全削除 ※!!! データが消えるため注意 !!!※

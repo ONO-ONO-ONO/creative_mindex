@@ -1,21 +1,22 @@
 create_table :animals, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
   t.string :name, null: false # 名前
   t.string :scientific_name # 学名
+  t.string :eng_name # 英名
   t.string :wa_name # 和名
   t.string :kanji_name # 漢字名
 
-  t.float :avg_long # 平均_体長(cm) (尾を含めない)
-  t.float :min_long # 最小_体長(cm) (尾を含めない)
-  t.float :max_long # 最大_体長(cm) (尾を含めない)
-  t.float :avg_long_tail # 平均_尾長(cm)
-  t.float :min_long_tail # 最小_尾長(cm)
-  t.float :max_long_tail # 最大_尾長(cm)
-  t.float :avg_tall # 平均_体高(cm)
-  t.float :min_tall # 最小_体高(cm)
-  t.float :max_tall # 最大_体高(cm)
-  t.float :avg_weight # 平均_体重(kg)
-  t.float :min_weight # 最小_体重(kg)
-  t.float :max_weight # 最大_体重(kg)
+  t.float :avg_long # 体長_平均(cm) (尾を含めない)
+  t.float :min_long # 体長_最小(cm) (尾を含めない)
+  t.float :max_long # 体長_最大(cm) (尾を含めない)
+  t.float :avg_long_tail # 尾長_平均(cm)
+  t.float :min_long_tail # 尾長_最小(cm)
+  t.float :max_long_tail # 尾長_最大(cm)
+  t.float :avg_tall # 体高_平均(cm)
+  t.float :min_tall # 体高_最小(cm)
+  t.float :max_tall # 体高_最大(cm)
+  t.float :avg_weight # 体重_平均(kg)
+  t.float :min_weight # 体重_最小(kg)
+  t.float :max_weight # 体重_最大(kg)
 
   t.string :domain_code # ドメイン
 

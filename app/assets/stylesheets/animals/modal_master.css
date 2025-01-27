@@ -1,0 +1,15 @@
+.modal_master_footer {
+  padding: 0px !important;
+}
+
+.modal_master_submit_btn {
+  padding: 3px 14px;
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.modal_master_add_btn_area {
+  padding: 0px 6px;
+}

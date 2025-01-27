@@ -1,8 +1,16 @@
-.animal-index {
+.animal_index {
   padding: 10px;
 }
 
 .title {
   font-size: 18px;
   font-weight: bold;
+}
+
+.form_btn {
+  padding-top: 10px;
+}
+
+.index_btn_area {
+  margin: 0px 2px;
 }

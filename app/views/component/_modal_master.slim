@@ -1,0 +1,34 @@
+/ モーダルのHTML
+.modal.fade id="master" tabindex="-1" aria-labelledby="masterLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      = form_with url: save_category_modal_animals_path, method: :post, local: true, data: { turbo_frame: "animal_form" } do |f_modal|
+        .modal-header
+          h5.modal-title id="master"
+            = "カテゴリー 新規作成"
+          button.btn-close type="button" data-bs-dismiss="modal" aria-label="Close"
+        .modal-body
+          / モーダルのコンテンツがここに入ります。
+          = hidden_field_tag :authenticity_token, form_authenticity_token
+
+          .default_form
+            .default_form_division
+              .default_form_cell
+                = f_modal.label "作成するマスター"
+                = f_modal.collection_select :master_selecta, master_selecta, :value, :name, {}, class: "form-control"
+
+            .default_form_division
+              .default_form_cell
+                = f_modal.label :name, "名前"
+                = f_modal.text_field :name, class: "form-control", placeholder: "必須"
+              .default_form_cell
+                = f_modal.label :code, "英名"
+                = f_modal.text_field :code, class: "form-control"
+
+        .modal-footer.modal_master_footer
+          button.btn type="button" data-bs-dismiss="modal"
+            = f_modal.submit "保存", class: "modal_master_submit_btn", data: { turbo_stream: true }
+
+/ モーダルを開くボタン
+.modal_master_btn.modal_master_add_btn_area data-bs-toggle="modal" data-bs-target="#master"
+  = "Add"

@@ -11,8 +11,15 @@ Rails.application.config.assets.precompile += %w[
   popper.js
   controllers/hello_controller.js
   controllers/index.js
+  @hotwired--turbo-rails.js
+  @hotwired--turbo.js
+  @rails--actioncable--src.js
 
+  default.css
   basic_header.css
   top.css
   animals/index.css
+  animals/form.css
+  animals/show.css
+  animals/modal_master.css
 ]
