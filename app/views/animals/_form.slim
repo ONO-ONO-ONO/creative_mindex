@@ -8,7 +8,7 @@
 .animal-form
   .title
     = title
-  turbo-frame id="domain-select-frame"
-    = render partial: "domain_select", locals: { form_object: form_object }
+  turbo-frame id="animal_form"
+    = render partial: "animal_ajax_form", locals: { form_object: form_object }
   .modal_master_btn_area
     = render partial: "/component/modal_master", locals: { master_selecta: @master_selecta }

@@ -47,8 +47,8 @@ module CategoryModal
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
-            "domain-select-frame",
-            partial: "domain_select",
+            "animal_form",
+            partial: "animal_ajax_form",
             locals: { master: master, master_table: master_table, form_object: set_form_object }
           )
         end

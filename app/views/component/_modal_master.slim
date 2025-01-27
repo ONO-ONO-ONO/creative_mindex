@@ -2,7 +2,7 @@
 .modal.fade id="master" tabindex="-1" aria-labelledby="masterLabel" aria-hidden="true"
   .modal-dialog
     .modal-content
-      = form_with url: save_category_modal_animals_path, method: :post, local: true, data: { turbo_frame: "domain-select-frame" } do |f_modal|
+      = form_with url: save_category_modal_animals_path, method: :post, local: true, data: { turbo_frame: "animal_form" } do |f_modal|
         .modal-header
           h5.modal-title id="master"
             = "カテゴリー 新規作成"
