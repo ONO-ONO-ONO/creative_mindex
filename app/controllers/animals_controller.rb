@@ -4,7 +4,8 @@ class AnimalsController < ApplicationController
 
   def index
     @index_type = "list"
-    @animals = Animal.active_all
+    @q = Animal.ransack(params[:q]) # 検索オブジェクトを作成
+    @animals = @q.result.active_all.order(:name) # 検索結果を取得
   end
 
   def new

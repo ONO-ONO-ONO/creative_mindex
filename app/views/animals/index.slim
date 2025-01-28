@@ -1,30 +1,57 @@
 = stylesheet_link_tag "animals/index", media: "all", "data-turbo-track": "reload"
 
-.animal_index
-  .title 動物図鑑
-  .form_btn
-    button.normal_btn1
-      = link_to "新規作成", "/animals/new", class: "no_underbar_link"
-  table.table
-    thead
-      tr
-        th 名前
-        th
-        th 分類
-        th 体長(cm)
-        th 体重(kg)
+= search_form_for @q, url: animals_path, method: :get, class: "search-form" do |f|
+  .animal_index
+    .title 動物図鑑
 
-    tbody
-      - @animals.each do |animal|
+    .animal_index_search_fields
+      .animal_index_search
+        = f.label :name_cont, "キーワード"
+        = f.text_field :name_or_scientific_name_or_eng_name_cont, class: "form-control", placeholder: "名前を入力"
+      .animal_index_search
+        = f.label :min_long, '最小体長(cm)'
+        = f.number_field :min_long_lteq, class: "form-control"
+      .animal_index_search
+        = f.label :max_long, '最大体長(cm)'
+        = f.number_field :max_long_gteq, class: "form-control"
+      .animal_index_search
+        = f.label :class_code
+        = f.collection_select :class_code_eq, Classes.all, :code, :name, { prompt: "---------未選択---------" }, class: "form-control"
+      .animal_index_search
+        = f.label :order_code
+        = f.collection_select :order_code_eq, Order.all, :code, :name, { prompt: "---------未選択---------" }, class: "form-control"
+      .animal_index_search
+        = f.label :family_code
+        = f.collection_select :family_code_eq, Family.all, :code, :name, { prompt: "---------未選択---------" }, class: "form-control"
+
+    .animal_index_btn_fields
+      .animal_index_new_btn_actions
+        = link_to "新規作成", "/animals/new", class: "normal_btn1 index_form_btn no_underbar_link"
+      .animal_index_search_actions
+        = f.submit "検索", class: "normal_btn1 index_form_btn"
+        .animal_index_reset_btn
+        = link_to "リセット", animals_path, class: "normal_btn2 index_form_btn no_underbar_link"
+
+    table.table
+      thead
         tr
-          td = animal.name
-          td
-            button.normal_btn2.index_btn_area
-              = link_to "詳細", "/animals/#{animal.id}", class: "no_underbar_link"
-            button.normal_btn1.index_btn_area
-              = link_to "編集", "/animals/#{animal.id}/edit", class: "no_underbar_link"
-            button.red_btn.index_btn_area
-              = link_to "削除", animal_path(animal.id), method: :delete, data: { confirm: "本当に削除しますか？", turbo: false }, class: "no_underbar_link"
-          td = animal.category_short
-          td = "約#{animal.get_ave_long}cm"
-          td = "約#{animal.get_ave_weight}kg"
+          th 名前
+          th
+          th 分類
+          th 体長(cm)
+          th 体重(kg)
+
+      tbody
+        - @animals.each do |animal|
+          tr
+            td = animal.name
+            td
+              button.normal_btn2.index_btn_area
+                = link_to "詳細", "/animals/#{animal.id}", class: "no_underbar_link"
+              button.normal_btn1.index_btn_area
+                = link_to "編集", "/animals/#{animal.id}/edit", class: "no_underbar_link"
+              button.red_btn.index_btn_area
+                = link_to "削除", animal_path(animal.id), method: :delete, data: { confirm: "本当に削除しますか？", turbo: false }, class: "no_underbar_link"
+            td = animal.category_short
+            td = "約#{animal.get_ave_long}cm"
+            td = "約#{animal.get_ave_weight}kg"
