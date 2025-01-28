@@ -59,7 +59,10 @@
 
         .default_form_box
           .info_img
-            img src="#{@animal.get_main_img_url}" alt="" class="info_img"
+            - if @animal.get_main_img_url.present?
+              = image_tag "#{@animal.get_main_img_url}", alt: "", class: "info_img"
+            - else
+              = image_tag url_for("/images/no_image.jpg"), alt: "", class: "info_img"
 
   .return_btn_area
     .normal_btn2.form_return_submit_btn
