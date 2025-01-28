@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
 
   def index
     @index_type = "list"
-    @animals = Animal.all
+    @animals = Animal.active_all
   end
 
   def new
@@ -49,7 +49,7 @@ class AnimalsController < ApplicationController
 
   def destroy
     @animal = Animal.find(params[:id])
-    @animal.destroy
+    @animal.update(deleted_at: Time.zone.now)
     redirect_to animals_url, notice: "動物が削除されました。"
   end
 

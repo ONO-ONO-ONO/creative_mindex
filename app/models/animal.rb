@@ -29,6 +29,10 @@ class Animal < ApplicationRecord
   # バリデーション
   validates :name, presence: true
 
+  def self.active_all
+    self.where(deleted_at: nil)
+  end
+
   # カテゴリー(全掲載)
   def category_all
     category_all = ""

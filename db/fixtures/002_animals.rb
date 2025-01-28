@@ -39,7 +39,8 @@ Animal.seed(
     species_code: "S10000", # 種(しゅ)
     sub_species_code: "aS10000", # 亜種(あしゅ)
     red_list_code: "LC",
-    note: "ネコ（猫）は、狭義には食肉目ネコ科ネコ属に分類されるリビアヤマネコ（ヨーロッパヤマネコ）が家畜化されたイエネコ（家猫、Felis silvestris catus）に対する通称である。イヌ（犬）と並ぶ代表的なペットとして、世界中で飼われている。広義的には、ヤマネコやネコ科動物全般を指すこともある"
+    note: "ネコ（猫）は、狭義には食肉目ネコ科ネコ属に分類されるリビアヤマネコ（ヨーロッパヤマネコ）が家畜化されたイエネコ（家猫、Felis silvestris catus）に対する通称である。イヌ（犬）と並ぶ代表的なペットとして、世界中で飼われている。広義的には、ヤマネコやネコ科動物全般を指すこともある",
+    deleted_at: nil
   },
   {
     id: 2,
@@ -80,7 +81,8 @@ Animal.seed(
     species_code: "S10001", # 種(しゅ)
     sub_species_code: "aS10001", # 亜種(あしゅ)
     red_list_code: "LC",
-    note: "イヌ（犬、狗、学名：Canis lupus familiaris、ラテン語名：canis、英名：dog、domestic dog）は、食肉目イヌ科イヌ属に分類される哺乳類の一種である。属名 Canis、種小名 lupus はラテン語でそれぞれ「犬」「狼」の意。亜種名 familiaris はラテン語で、「家庭に属する」といった意味である。広義には、イヌ科動物全般を指すこともある"
+    note: "イヌ（犬、狗、学名：Canis lupus familiaris、ラテン語名：canis、英名：dog、domestic dog）は、食肉目イヌ科イヌ属に分類される哺乳類の一種である。属名 Canis、種小名 lupus はラテン語でそれぞれ「犬」「狼」の意。亜種名 familiaris はラテン語で、「家庭に属する」といった意味である。広義には、イヌ科動物全般を指すこともある",
+    deleted_at: nil
   },
   {
     id: 3,
@@ -121,6 +123,7 @@ Animal.seed(
     species_code: "S10002", # 種(しゅ)
     sub_species_code: "", # 亜種(あしゅ)
     red_list_code: "LC",
-    note: "スズメ（雀、すずめ、学名 Passer montanus ）は、スズメ目スズメ科スズメ属に分類される鳥類の1種。人家の近くに生息する小鳥である。"
+    note: "スズメ（雀、すずめ、学名 Passer montanus ）は、スズメ目スズメ科スズメ属に分類される鳥類の1種。人家の近くに生息する小鳥である。",
+    deleted_at: nil
   },
 )
