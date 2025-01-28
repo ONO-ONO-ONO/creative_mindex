@@ -19,6 +19,13 @@
   color: aliceblue;
 }
 
+.red_btn {
+  background: #eea2a1; /* ボタンの色 */
+  border: 1px solid #eea2a1; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
 .normal_submit_btn {
   padding: 3px 14px;
   background: #648877; /* ボタンの色 */

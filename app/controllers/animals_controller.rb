@@ -47,7 +47,10 @@ class AnimalsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+    redirect_to animals_url, notice: "動物が削除されました。"
   end
 
   def save_category_modal
