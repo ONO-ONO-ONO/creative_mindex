@@ -147,6 +147,12 @@ Order.seed(
 # 亜目(あもく)
 SubOrder.seed(
   { id: 1, name: "ネコ亜目", eng_name: "feliformia", code: "aO10000", parent_code: "O10000" },
+  { id: 2, name: "ハクジラ亜目", eng_name: "odontoceti", code: "aO10001", parent_code: "O10003" },
+)
+
+# 上科(じょうか)
+SuperFamily.seed(
+  { id: 1, name: "マイルカ上科", eng_name: "delphinoidea", code: "sF10000", parent_code: "aO10001" },
 )
 
 # 科(か)
@@ -154,6 +160,15 @@ Family.seed(
   { id: 1, name: "ネコ科", eng_name: "felidae", code: "F10000", parent_code: "aO10000" },
   { id: 2, name: "イヌ科", eng_name: "canidae", code: "F10001", parent_code: "O10000" },
   { id: 3, name: "スズメ科", eng_name: "passeridae", code: "F10002", parent_code: "O10012" },
+  { id: 4, name: "カラス科", eng_name: "corvidae", code: "F10003", parent_code: "O10012" },
+  { id: 5, name: "ビーバー科", eng_name: "castoridae", code: "F10004", parent_code: "O10001" },
+  { id: 6, name: "ネズミ科", eng_name: "rodentia", code: "F10005", parent_code: "O10001" },
+  { id: 7, name: "マイルカ科", eng_name: "delphinidae", code: "F10006", parent_code: "sF10000" },
+)
+
+# 亜科(あか)
+SubFamily.seed(
+  { id: 1, name: "シャチ亜科", eng_name: "orcininae", code: "aF10000", parent_code: "F10006" },
 )
 
 
@@ -162,6 +177,13 @@ Genuses.seed(
   { id: 1, name: "ネコ属", eng_name: "felis", code: "G10000", parent_code: "F10000" },
   { id: 2, name: "イヌ属", eng_name: "canis", code: "G10001", parent_code: "F10001" },
   { id: 3, name: "スズメ属", eng_name: "passer", code: "G10002", parent_code: "F10002" },
+  { id: 4, name: "タヌキ属", eng_name: "nyctereutes", code: "G10003", parent_code: "F10001" },
+  { id: 5, name: "キツネ属", eng_name: "vulpes", code: "G10004", parent_code: "F10001" },
+  { id: 6, name: "カラス属", eng_name: "corvus", code: "G10005", parent_code: "F10003" },
+  { id: 7, name: "ビーバー属", eng_name: "castor", code: "G10006", parent_code: "F10004" },
+  { id: 8, name: "カヤネズミ属", eng_name: "micromys", code: "G10007", parent_code: "F10005" },
+  { id: 9, name: "シャチ属", eng_name: "orcinus", code: "G10008", parent_code: "aF10000" },
+  { id: 10, name: "	ヒョウ属", eng_name: "panthera", code: "G10009", parent_code: "F10000" },
 )
 
 # 亜属(あぞく)
@@ -174,12 +196,24 @@ Species.seed(
   { id: 1, name: "ヨーロッパヤマネコ", eng_name: "silvestris", code: "S10000", parent_code: "aG10000" },
   { id: 2, name: "オオカミ", eng_name: "lupus", code: "S10001", parent_code: "G10001" },
   { id: 3, name: "スズメ", eng_name: "montanus", code: "S10002", parent_code: "G10002" },
+  { id: 4, name: "タヌキ", eng_name: "viverrinus", code: "S10003", parent_code: "G10003" },
+  { id: 5, name: "アカギツネ", eng_name: "vulpes", code: "S10004", parent_code: "G10004" },
+  { id: 6, name: "ハシブトガラス", eng_name: "macrorhynchos", code: "S10005", parent_code: "G10005" },
+  { id: 7, name: "ハシボソガラス", eng_name: "corone", code: "S10006", parent_code: "G10005" },
+  { id: 8, name: "アメリカビーバー", eng_name: "canadensis", code: "S10007", parent_code: "G10006" },
+  { id: 9, name: "カヤネズミ", eng_name: "minutus", code: "S10008", parent_code: "G10007" },
+  { id: 10, name: "シャチ", eng_name: "orca", code: "S10009", parent_code: "G10008" },
+  { id: 11, name: "トラ", eng_name: "tigris", code: "S10011", parent_code: "G10009" },
 )
 
 # 亜種(あしゅ)
 SubSpecies.seed(
   { id: 1, name: "イエネコ", eng_name: "catus", code: "aS10000", parent_code: "S10000" },
   { id: 2, name: "イエイヌ", eng_name: "familiaris", code: "aS10001", parent_code: "S10001" },
+  { id: 3, name: "ホンドタヌキ", eng_name: "viverrinus", code: "aS10002", parent_code: "S10003" },
+  { id: 5, name: "ホンドギツネ", eng_name: "japonica", code: "aS10003", parent_code: "S10004" },
+  { id: 6, name: "キタキツネ", eng_name: "schrencki", code: "aS10004", parent_code: "S10004" },
+  { id: 7, name: "アムールトラ", eng_name: "altaica", code: "aS10005", parent_code: "S10011" },
 )
 
 # レッドリスト
