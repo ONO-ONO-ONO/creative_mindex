@@ -16,20 +16,96 @@ class Animal < ApplicationRecord
   has_one :order, foreign_key: :code, primary_key: :order_code
   has_one :sub_order, foreign_key: :code, primary_key: :sub_order_code
   has_one :infra_order, foreign_key: :code, primary_key: :sub_order_code
-
   has_one :super_family, foreign_key: :code, primary_key: :super_family_code
   has_one :family, foreign_key: :code, primary_key: :family_code
   has_one :sub_family, foreign_key: :code, primary_key: :sub_family_code
-  has_one :genus, foreign_key: :code, primary_key: :genus_code
-  has_one :sub_genus, foreign_key: :code, primary_key: :sub_genus_code
+  has_one :genuses, foreign_key: :code, primary_key: :genus_code
+  has_one :sub_genuses, foreign_key: :code, primary_key: :sub_genus_code
   has_one :species, foreign_key: :code, primary_key: :species_code
   has_one :sub_species, foreign_key: :code, primary_key: :sub_species_code
   has_one :red_list, foreign_key: :code, primary_key: :red_list_code
+  has_many :animal_image, foreign_key: :animal_id, primary_key: :id
 
+  # バリデーション
+  validates :name, presence: true
+
+  # 検索可能な属性を許可
+  def self.ransackable_attributes(auth_object = nil)
+    column_names
+  end
+
+  # 検索可能な関連オブジェクトを指定
+  def self.ransackable_associations(auth_object = nil)
+    reflect_on_all_associations.map(&:name).map(&:to_s)
+  end
+
+  def self.active_all
+    self.where(deleted_at: nil)
+  end
+
+  # カテゴリー(全掲載)
   def category_all
-    # category_all = ""
-    # category_all += self.
+    category_all = ""
+    category_all += self.domain&.name.to_s if self.domain_code.present?
+    category_all += self.kingdom&.name.to_s if self.kingdom_code.present?
+    category_all += self.super_phylum&.name.to_s if self.super_phylum_code.present?
+    category_all += self.phylum&.name.to_s if self.phylum_code.present?
+    category_all += self.sub_phylum&.name.to_s if self.sub_phylum_code.present?
+    category_all += self.super_classes&.name.to_s if self.super_class_code.present?
+    category_all += self.classes&.name.to_s if self.class_code.present?
+    category_all += self.sub_classes&.name.to_s if self.sub_class_code.present?
+    category_all += self.infra_classes&.name.to_s if self.infra_class_code.present?
+    category_all += self.super_order&.name.to_s if self.super_order_code.present?
+    category_all += self.order&.name.to_s if self.order_code.present?
+    category_all += self.sub_order&.name.to_s if self.sub_order_code.present?
+    category_all += self.infra_order&.name.to_s if self.infra_order_code.present?
+    category_all += self.super_family&.name.to_s if self.super_family_code.present?
+    category_all += self.family&.name.to_s if self.family_code.present?
+    category_all += self.sub_family&.name.to_s if self.sub_family_code.present?
+    category_all += self.genuses&.name.to_s if self.genus_code.present?
+    category_all += self.sub_genuses&.name.to_s if self.sub_genus_code.present?
+    category_all += self.species&.name.to_s if self.species_code.present?
+    category_all += self.sub_species&.name.to_s if self.sub_species_code.present?
+    category_all
+  end
 
-    # aaa
+  # カテゴリー(ショート掲載ver: 綱・目・科・属・種) ※亜種が存在する場合は種では無く亜種を表示
+  def category_short
+    category_short = ""
+    category_short += self.classes&.name.to_s if self.class_code.present?
+    category_short += self.order&.name.to_s if self.order_code.present?
+    category_short += self.family&.name.to_s if self.family_code.present?
+    category_short += self.genuses&.name.to_s if self.genus_code.present?
+    category_short += self.species&.name.to_s if self.species_code.present? && self.sub_species_code.blank?
+    category_short += self.sub_species&.name.to_s if self.sub_species_code.present?
+    category_short
+  end
+
+  # 平均の体長取得
+  def get_ave_long
+    if self.avg_long.present?
+      self.avg_long
+    elsif self.min_long.present? && self.max_long.present?
+      (self.min_long + self.max_long) / 2
+    end
+  end
+
+  # 平均の体重取得
+  def get_ave_weight
+    if self.avg_weight.present?
+      self.avg_weight
+    elsif self.min_weight.present? && self.max_weight.present?
+      (self.min_weight + self.max_weight) / 2
+    end
+  end
+
+  # メイン画像取得
+  def get_main_img_url
+    self.animal_image&.find_by(main_flg: true)&.img_url
+  end
+
+  # 一覧アイコン画像取得
+  def get_icon_img_url
+    self.animal_image&.find_by(icon_flg: true)&.img_url
   end
 end

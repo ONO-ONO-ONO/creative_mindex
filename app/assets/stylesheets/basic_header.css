@@ -1,8 +1,9 @@
-.basic-header {
+.basic_header {
+  z-index: 100;
    /* ヘッダーを画面上部に固定する */
   position: sticky;
   top: 0;
-  height: 70px; /* ヘッダー高さ */
+  height: 50px; /* ヘッダー高さ */
   display: flex; /* 子要素を横並びにする */
   background-color: #291c0e; /* ヘッダー背景色 */
   /*
@@ -13,20 +14,21 @@
   */
 }
 
-.top-title {
-  padding-top: 10px;
+.top_title {
+  padding-top: 5px;
   padding-left: 10px;
   color: aliceblue;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-.top-list {
-  margin-left: 1040px;
-  margin-top: 8px;
+.top_list {
+  margin-left: 1060px;
+  padding-top: 4px;
+  font-size: 14px;
 }
 
-.header-link {
+.header_link {
   text-decoration: none;
   color: aliceblue;
 }

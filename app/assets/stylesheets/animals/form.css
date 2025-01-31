@@ -1,0 +1,123 @@
+.title {
+  z-index: 10;
+  padding-top: 10px;
+  padding-bottom: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #4d4741;
+  /* ヘッダーを画面上部に固定する */
+  position: fixed;
+  width: 98.5%;
+  height: 50px; /* ヘッダー高さ */
+  background-color: #ffffff; /* ヘッダー背景色 */
+}
+
+.column1 {
+  width: 33% !important;
+  border-right: 1px solid #4d4741;
+}
+
+.column2 {
+  width: 67% !important;
+}
+
+.column2_form {
+  width: 32%;
+}
+
+.column2_text_field {
+  width: 100%;
+  height: 120px;
+}
+
+.column2_text_field_division {
+  display: block !important;
+}
+
+input[type="text"][class="column2_text_field"]{
+  width: 100%;
+  height: 120px;
+  padding-bottom: 10px;
+}
+
+.info {
+  padding-top: 64px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex; /* 子要素を横並びにする */
+}
+
+.info_line {
+  padding-top: 10px;
+  border-bottom: 1px solid #4d4741;
+}
+
+.basic_info {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.status_info {
+  padding-top: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.info_img {
+  padding-top: 14px;
+  text-align: center;
+
+  img {
+    width: 90%; /* コンテナの幅に合わせる */
+    height: 60%; /* コンテナの高さに合わせる */
+    object-fit: contain; /* 画像をコンテナ内に収め、アスペクト比を維持する */
+  }
+}
+
+.modal_master_btn_area {
+  position: absolute;
+  top: 125.5px;
+  left: 488px;
+  font-size: 13px;
+}
+
+.delete_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1010px;
+}
+
+.return_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1114px;
+}
+
+.submit_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1180px;
+}
+
+.modal_master_btn {
+  padding: 0px 6px;
+  text-align: center;
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 8px; /* ボタンの角丸 */
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.form_return_submit_btn {
+  padding: 3px 14px;
+}

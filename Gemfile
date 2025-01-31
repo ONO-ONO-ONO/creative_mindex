@@ -10,9 +10,9 @@ gem "sqlite3", ">= 2.1"
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Hotwire"s SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire"s modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -46,6 +46,9 @@ gem "seed-fu", "~> 2.3.9"
 gem "slim", "~> 5.2.1"
 gem "better_errors", "~> 2.10.1"
 gem "binding_of_caller", "~> 1.0.1"
+gem "ransack"
+gem "kaminari"
+gem "kaminari-bootstrap"
 
 # bootstrap & scss系
 gem "bootstrap", "~> 5.3.0"
@@ -65,6 +68,11 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "pry-rails"  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem "pry-doc"    # methodを表示
+  gem "pry-byebug" # デバッグを実施(Ruby 2.0以降で動作する)
+  gem "pry-stack_explorer" # スタックをたどれる
 end
 
 group :development do

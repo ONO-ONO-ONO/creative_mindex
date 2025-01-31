@@ -11,9 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 0) do
+  create_table "animal_images", force: :cascade do |t|
+    t.integer "animal_id", null: false
+    t.string "img_url", null: false
+    t.integer "sort"
+    t.boolean "main_flg", default: false, null: false
+    t.boolean "icon_flg", default: false, null: false
+  end
+
   create_table "animals", force: :cascade do |t|
     t.string "name", null: false
     t.string "scientific_name"
+    t.string "eng_name"
     t.string "wa_name"
     t.string "kanji_name"
     t.float "avg_long"
@@ -50,6 +59,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.string "sub_species_code"
     t.string "red_list_code"
     t.text "note"
+    t.datetime "deleted_at"
   end
 
   create_table "classes", force: :cascade do |t|

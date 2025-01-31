@@ -1,0 +1,140 @@
+/* リンク文字の下線削除 */
+.no_underbar_link {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* デフォルトボタン */
+.normal_btn1 {
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.normal_btn2 {
+  background: #9eaa88; /* ボタンの色 */
+  border: 1px solid #9eaa88; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.red_btn1 {
+  background: #eea2a1; /* ボタンの色 */
+  border: 1px solid #eea2a1; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.red_btn2 {
+  background: #b64442; /* ボタンの色 */
+  border: 1px solid #b64442; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.normal_submit_btn {
+  padding: 3px 14px;
+  background: #648877; /* ボタンの色 */
+  border: 1px solid #648877; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.error_message {
+  color: red;
+}
+
+.customize_paginate {
+  margin: 0px;
+  --bs-pagination-padding-y: 0.175rem;
+}
+.customize_paginate.active, .active > .page-link {
+  z-index: 3;
+  color: aliceblue;
+  background-color: #648877;
+  border-color: #648877;
+  cursor:pointer;
+}
+
+.customize_page_link {
+  color: #648877;
+}
+.customize_page_link:hover {
+  z-index: 2;
+  color: #648877;
+  background-color: var(--bs-pagination-hover-bg);
+  border-color: var(--bs-pagination-hover-border-color);
+}
+
+/*
+  24393F
+  648877
+  B3C09A
+  D9D89D
+*/
+
+/* ------------- */
+/* デフォルト項目 */
+/* ------------- */
+.default_form {
+  .default_form_box {
+    width: 50%;
+  }
+
+  .default_form_area {
+    padding: 10px
+  }
+
+  .default_form_division {
+    display: flex; /* 子要素を横並びにする */
+  }
+
+  .default_form_cell {
+    padding: 5px 20px;
+  }
+
+  .default_form_cell_to_min {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+
+  .default_form_cell_to_max {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 20px;
+  }
+
+  input[type="text"]{
+    /* width: 50%; */
+    font-size: 14px;
+    /* height: 26px; */
+  }
+  input[type="text"][id="status_type"]{
+    /* width: 20%; */
+    font-size: 14px;
+    /* height: 26px; */
+  }
+  ::placeholder{
+    padding: 5px 5px;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .status_form {
+    width: 50%;
+  }
+
+  .form_to {
+    padding-top: 32px;
+    display: inline-block;
+    color: #9d9d9d;
+  }
+}

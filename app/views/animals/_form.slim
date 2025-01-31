@@ -1,0 +1,14 @@
+= stylesheet_link_tag "animals/form", media: "all", "data-turbo-track": "reload"
+= stylesheet_link_tag "animals/modal_master", media: "all", "data-turbo-track": "reload"
+- form_object = @animal
+- title = @form_title
+- select_tab = @select_tab
+- prompt_default = "-----------選択-----------"
+
+.animal-form
+  .title
+    = title
+  turbo-frame id="animal_form"
+    = render partial: "animal_ajax_form", locals: { form_object: form_object }
+  .modal_master_btn_area
+    = render partial: "/component/modal_master", locals: { master_selecta: @master_selecta }

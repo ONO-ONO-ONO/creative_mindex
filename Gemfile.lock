@@ -98,6 +98,7 @@ GEM
     brakeman (7.0.0)
       racc
     builder (3.3.0)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -107,6 +108,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    coderay (1.1.3)
     concurrent-ruby (1.3.4)
     connection_pool (2.5.0)
     crass (1.0.6)
@@ -160,6 +162,21 @@ GEM
       sshkit (>= 1.23.0, < 2.0)
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
+    kaminari-core (1.2.2)
     language_server-protocol (3.17.0.3)
     logger (1.6.4)
     loofah (2.24.0)
@@ -172,6 +189,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.4)
     msgpack (1.7.5)
@@ -217,6 +235,20 @@ GEM
       activesupport (>= 7.0.0)
       rack
       railties (>= 7.0.0)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    pry-doc (1.5.0)
+      pry (~> 0.11)
+      yard (~> 0.9.11)
+    pry-rails (0.3.11)
+      pry (>= 0.13.0)
+    pry-stack_explorer (0.6.1)
+      binding_of_caller (~> 1.0)
+      pry (~> 0.13)
     psych (5.2.2)
       date
       stringio
@@ -263,6 +295,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
+    ransack (4.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.10.0)
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
@@ -392,6 +428,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yard (0.9.37)
     zeitwerk (2.7.1)
 
 PLATFORMS
@@ -418,9 +455,16 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kamal
+  kaminari
+  kaminari-bootstrap
   propshaft
+  pry-byebug
+  pry-doc
+  pry-rails
+  pry-stack_explorer
   puma (>= 5.0)
   rails (~> 8.0.1)
+  ransack
   ridgepole (~> 3.0.0)
   rubocop-rails-omakase
   sass-rails (~> 6.0.0)
