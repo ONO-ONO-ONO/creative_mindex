@@ -4,7 +4,24 @@ class AnimalsController < ApplicationController
 
   def index
     @index_type = "list"
-    @animals = Animal.all
+    @q = Animal.ransack(params[:q]) # 検索オブジェクトを作成
+
+    # 表示する条件 ラジオボタン
+    if params[:q].blank?
+      params[:status] = "active" # ラジオボタンの初期値
+    else
+      params[:status] = params["q"]["status_eq"]
+    end
+    status = params[:status] # ラジオボタンで選択された値
+
+    # statusが存在する場合、statusで絞り込み
+    @animals = if status == "active"
+      @q.result.active_all.order(:name).page(params[:page]).per(10)
+    elsif status == "inactive"
+      @q.result.where.not(deleted_at: nil).order(:name).page(params[:page]).per(10)
+    elsif  status == "all"
+      @q.result.order(:name).page(params[:page]).per(10)
+    end
   end
 
   def new
@@ -47,7 +64,18 @@ class AnimalsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @animal = Animal.find(params[:id])
+    # 既に論理削除しているか
+    if @animal.deleted_at.present?
+      # 物理削除
+      @animal.destroy
+      redirect_to animals_url, notice: "動物が物理削除されました。"
+    else
+      # 論理削除
+      @animal.update(deleted_at: Time.zone.now)
+      redirect_to animals_url, notice: "動物が論理削除されました。"
+    end
   end
 
   def save_category_modal
@@ -111,7 +139,8 @@ class AnimalsController < ApplicationController
       :species_code,
       :sub_species_code,
       :red_list_code,
-      :note
+      :note,
+      :deleted_at
       )
   end
 end

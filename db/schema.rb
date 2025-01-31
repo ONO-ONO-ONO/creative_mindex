@@ -59,6 +59,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.string "sub_species_code"
     t.string "red_list_code"
     t.text "note"
+    t.datetime "deleted_at"
   end
 
   create_table "classes", force: :cascade do |t|

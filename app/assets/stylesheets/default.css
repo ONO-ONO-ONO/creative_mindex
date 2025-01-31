@@ -19,6 +19,20 @@
   color: aliceblue;
 }
 
+.red_btn1 {
+  background: #eea2a1; /* ボタンの色 */
+  border: 1px solid #eea2a1; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
+.red_btn2 {
+  background: #b64442; /* ボタンの色 */
+  border: 1px solid #b64442; /* ボタン枠線の太さ & 色 */
+  border-radius: 4px; /* ボタンの角丸 */
+  color: aliceblue;
+}
+
 .normal_submit_btn {
   padding: 3px 14px;
   background: #648877; /* ボタンの色 */
@@ -29,6 +43,28 @@
 
 .error_message {
   color: red;
+}
+
+.customize_paginate {
+  margin: 0px;
+  --bs-pagination-padding-y: 0.175rem;
+}
+.customize_paginate.active, .active > .page-link {
+  z-index: 3;
+  color: aliceblue;
+  background-color: #648877;
+  border-color: #648877;
+  cursor:pointer;
+}
+
+.customize_page_link {
+  color: #648877;
+}
+.customize_page_link:hover {
+  z-index: 2;
+  color: #648877;
+  background-color: var(--bs-pagination-hover-bg);
+  border-color: var(--bs-pagination-hover-border-color);
 }
 
 /*

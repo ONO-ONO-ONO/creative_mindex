@@ -49,4 +49,6 @@ create_table :animals, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_
   t.string :red_list_code # レッドリスト
 
   t.text :note # ノート
+
+  t.datetime :deleted_at, default: nil # 削除時間
 end

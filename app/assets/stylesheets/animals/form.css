@@ -87,6 +87,13 @@ input[type="text"][class="column2_text_field"]{
   font-size: 13px;
 }
 
+.delete_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1010px;
+}
+
 .return_btn_area {
   z-index: 20;
   position: fixed;

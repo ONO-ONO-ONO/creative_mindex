@@ -29,6 +29,20 @@ class Animal < ApplicationRecord
   # バリデーション
   validates :name, presence: true
 
+  # 検索可能な属性を許可
+  def self.ransackable_attributes(auth_object = nil)
+    column_names
+  end
+
+  # 検索可能な関連オブジェクトを指定
+  def self.ransackable_associations(auth_object = nil)
+    reflect_on_all_associations.map(&:name).map(&:to_s)
+  end
+
+  def self.active_all
+    self.where(deleted_at: nil)
+  end
+
   # カテゴリー(全掲載)
   def category_all
     category_all = ""
