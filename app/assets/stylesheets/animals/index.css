@@ -53,3 +53,12 @@
 .animal_index_radio_button {
   padding-left: 8px;
 }
+
+.animal_index_paginate {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 172px;
+  left: 534px;
+}

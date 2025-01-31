@@ -45,6 +45,28 @@
   color: red;
 }
 
+.customize_paginate {
+  margin: 0px;
+  --bs-pagination-padding-y: 0.175rem;
+}
+.customize_paginate.active, .active > .page-link {
+  z-index: 3;
+  color: aliceblue;
+  background-color: #648877;
+  border-color: #648877;
+  cursor:pointer;
+}
+
+.customize_page_link {
+  color: #648877;
+}
+.customize_page_link:hover {
+  z-index: 2;
+  color: #648877;
+  background-color: var(--bs-pagination-hover-bg);
+  border-color: var(--bs-pagination-hover-border-color);
+}
+
 /*
   24393F
   648877

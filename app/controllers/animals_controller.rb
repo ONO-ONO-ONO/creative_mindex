@@ -16,11 +16,11 @@ class AnimalsController < ApplicationController
 
     # statusが存在する場合、statusで絞り込み
     @animals = if status == "active"
-      @q.result.active_all.order(:name)
+      @q.result.active_all.order(:name).page(params[:page]).per(10)
     elsif status == "inactive"
-      @q.result.where.not(deleted_at: nil).order(:name)
+      @q.result.where.not(deleted_at: nil).order(:name).page(params[:page]).per(10)
     elsif  status == "all"
-      @q.result.order(:name)
+      @q.result.order(:name).page(params[:page]).per(10)
     end
   end
 

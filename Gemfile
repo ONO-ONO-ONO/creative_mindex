@@ -47,6 +47,8 @@ gem "slim", "~> 5.2.1"
 gem "better_errors", "~> 2.10.1"
 gem "binding_of_caller", "~> 1.0.1"
 gem "ransack"
+gem "kaminari"
+gem "kaminari-bootstrap"
 
 # bootstrap & scss系
 gem "bootstrap", "~> 5.3.0"
