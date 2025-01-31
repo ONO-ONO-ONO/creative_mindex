@@ -41,7 +41,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # 追加gem ============================
-gem "ridgepole", "~> 3.0.0"
+gem "ridgepole", "~> 3.0.1"
 gem "seed-fu", "~> 2.3.9"
 gem "slim", "~> 5.2.1"
 gem "better_errors", "~> 2.10.1"
