@@ -1,0 +1,5 @@
+Rails 8.0 でjavascriptを使用する場合は
+Stimulusを使う方法が最も推薦される。
+
+/app/javascript/controllers
+でファイルを管理。

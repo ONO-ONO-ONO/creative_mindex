@@ -1,0 +1,57 @@
+.info
+  .default_form_box
+    .default_form_area
+      .name
+        = animal.name
+      .eng_name
+        = animal.eng_name
+      .another_name_area
+        .another_name_title
+          = "学名"
+        .another_name
+          = animal.scientific_name
+      .another_name_area
+        .another_name_title.label_green
+          = "和名"
+        .another_name
+          = animal.wa_name
+      .another_name_area
+        .another_name_title.label_yellow
+          = "漢名"
+        .another_name
+          = animal.kanji_name
+      .another_name_area
+        .another_name_title.label_orange
+          = "分類"
+        .another_name
+          = animal.category_short
+
+      .another_name_area
+        .another_name_title.red_list_title
+          = "レッドリスト"
+        - if animal.red_list&.big_name == "低リスク"
+          .red_list_name.label_green
+            = animal.red_list&.name
+        - elsif animal.red_list&.big_name == "絶滅危惧"
+          .red_list_name.label_yellow
+            = animal.red_list&.name
+        - elsif animal.red_list&.big_name == "絶滅"
+          .red_list_name.label_red
+            = animal.red_list&.name
+        - elsif animal.red_list&.big_name == "その他"
+          .red_list_name.label_blue
+            = animal.red_list&.name
+        - else
+          .red_list_name
+            = animal.red_list&.name
+
+      .another_name_area
+        .another_name
+          = animal.note
+
+  .default_form_box
+    .info_img
+      - if animal.get_main_img_url.present?
+        = image_tag "#{animal.get_main_img_url}", alt: "", class: "info_img"
+      - else
+        = image_tag url_for("/images/no_image.jpg"), alt: "", class: "info_img"
