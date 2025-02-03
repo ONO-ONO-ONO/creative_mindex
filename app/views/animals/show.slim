@@ -1,12 +1,25 @@
 = stylesheet_link_tag "animals/form", media: "all", "data-turbo-track": "reload"
 = stylesheet_link_tag "animals/show", media: "all", "data-turbo-track": "reload"
-.animal-form
-  .title
-    = "#{@form_title} - #{@animal.name}"
 
-  .default_form
-    .info
-      - if @select_tab == "basic"
+div data-controller="animal-form-tabs"
+  .animal-form
+    .title
+      = "#{@form_title} - #{@animal.name}"
+    .animal-tab-area
+      / タブボタン
+      .tab-buttons
+        button.btn-gradient.active data-animal-form-tabs-target="tab" data-action="click->animal-form-tabs#change" data-index="0"
+          i.fas.fa-book
+            = " 基本情報"
+        button.btn-gradient data-animal-form-tabs-target="tab" data-action="click->animal-form-tabs#change" data-index="1"
+          i.fas.fa-chart-simple
+            = " スペック"
+        button.btn-gradient data-animal-form-tabs-target="tab" data-action="click->animal-form-tabs#change" data-index="2"
+          i.fas.fa-image
+            = " イメージ"
+
+    .default_form data-animal-form-tabs-target="another"
+      .info
         .default_form_box
           .default_form_area
             .name
@@ -64,10 +77,10 @@
             - else
               = image_tag url_for("/images/no_image.jpg"), alt: "", class: "info_img"
 
-  .return_btn_area
-    .normal_btn2.form_return_submit_btn
-      = link_to "戻る", "/animals", class: "no_underbar_link"
+    .return_btn_area
+      .normal_btn2.form_return_submit_btn
+        = link_to "戻る", "/animals", class: "no_underbar_link"
 
-  .submit_btn_area
-    .normal_btn1.form_return_submit_btn
-      = link_to "編集", "/animals/#{@animal.id}/edit", class: "no_underbar_link"
+    .submit_btn_area
+      .normal_btn1.form_return_submit_btn
+        = link_to "編集", "/animals/#{@animal.id}/edit", class: "no_underbar_link"

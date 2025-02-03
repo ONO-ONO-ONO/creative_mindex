@@ -12,3 +12,4 @@ pin "@hotwired/turbo", to: "@hotwired--turbo.js" # @8.0.12
 pin "@rails/actioncable/src", to: "@rails--actioncable--src.js" # @7.2.201
 pin "@rails/ujs", to: "rails-ujs.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @6.7.2

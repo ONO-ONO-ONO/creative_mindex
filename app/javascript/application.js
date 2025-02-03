@@ -6,6 +6,7 @@
 import "@rails/ujs";
 import "controllers"
 import "@hotwired/turbo-rails"
+import "@fortawesome/fontawesome-free";
 
 import { Application } from "@hotwired/stimulus"
 

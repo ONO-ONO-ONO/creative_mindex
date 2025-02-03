@@ -5,21 +5,10 @@
 - select_tab = @select_tab
 - prompt_default = "-----------選択-----------"
 
-div data-controller="tabs"
-  .animal-tab-area
-    / タブボタン
-    .tab-buttons
-      button.active data-tabs-target="tab" data-action="click->tabs#change" data-index="0" 基本情報
-      button data-tabs-target="tab" data-action="click->tabs#change" data-index="1" スペック
-      button data-tabs-target="tab" data-action="click->tabs#change" data-index="2" 画像
-
-  .animal-form
-    .title
-      = title
-    turbo-frame id="animal_form" data-tabs-target="another"
-      = render partial: "animal_ajax_form", locals: { form_object: form_object }
-    .modal_master_btn_area data-tabs-target="another"
-      = render partial: "/component/modal_master", locals: { master_selecta: @master_selecta }
-
-
-
+.animal-form
+  .title
+    = title
+  turbo-frame id="animal_form"
+    = render partial: "animal_ajax_form", locals: { form_object: form_object }
+  .modal_master_btn_area
+    = render partial: "/component/modal_master", locals: { master_selecta: @master_selecta }
