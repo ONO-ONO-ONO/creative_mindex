@@ -19,13 +19,10 @@ export default class extends Controller {
     // クリックされたタブボタンに `tab_active` クラスを追加
     this.tabTargets[index].classList.add("tab_active")
 
-    // タブ1で表示する物のON/OFFロジック
-    if (index == 0) {
-      this.anotherTargets.forEach(another => another.classList.remove("hidden"))
-      this.anotherTargets.forEach(another => another.classList.add("active"))
-    } else {
-      this.anotherTargets.forEach(another => another.classList.remove("active"))
-      this.anotherTargets.forEach(another => another.classList.add("hidden"))
-    }
+    // 全てのタブコンテンツを非表示
+    this.contentTargets.forEach(content => content.classList.add("hidden"))
+
+    // 選択されたタブのコンテンツを表示
+    this.contentTargets[index].classList.remove("hidden")
   }
 }
