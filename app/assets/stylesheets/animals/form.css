@@ -121,3 +121,11 @@ input[type="text"][class="column2_text_field"]{
 .form_return_submit_btn {
   padding: 3px 14px;
 }
+
+.animal-tab-area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 530px;
+  width: 100%;
+}

@@ -138,3 +138,17 @@
     color: #9d9d9d;
   }
 }
+
+/* ------------- */
+/* タブ          */
+/* ------------- */
+.hidden {
+  display: none;
+}
+.active {
+  font-weight: bold;
+}
+.tab_active {
+  font-weight: bold;
+  color: blue;
+}
