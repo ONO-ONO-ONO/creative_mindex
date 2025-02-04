@@ -1,0 +1,51 @@
+= stylesheet_link_tag "masters/index", media: "all", "data-turbo-track": "reload"
+
+= search_form_for @q, url: masters_path, method: :get, class: "search-form" do |f|
+  .category-index
+    - unless @index_flg
+      .title
+        = "表示するマスタを選択"
+
+      .category-index-search-fields
+        .category-index-search.category-select-field
+          = f.collection_select :big_schema, Category.all, :big_schema, :name, {}, class: "form-control category-select-box"
+
+        .category-index-search.category-select-field.category-select-btn
+          = f.submit "検索", class: "normal_btn1 index-form-btn"
+    - else
+      .title
+        = Category.find_by(big_schema: params[:button]).name + "一覧"
+
+      .category-index-search-fields
+        .category-index-search
+          = f.label :name_cont, "名前"
+          = f.text_field :name_cont, class: "form-control", placeholder: "名前を入力"
+        .category-index-search.reset-btn
+          = link_to "リセット", masters_path(button: params[:button]), class: "normal_btn2 index-form-btn no_underbar_link"
+        .category-index-search.search-btn
+          = f.button "検索", type: "submit", value: params[:button], class: "normal_btn1 index-form-btn"
+        .category-index-search.return-btn
+          = link_to "戻る", "/masters", class: "normal_btn2 no_underbar_link return-btn-size"
+
+      .master-index-paginate
+        = paginate @masters
+
+      table.table
+        thead
+          tr
+            th
+              = sort_link(@q, :id, "ID")
+            th
+              = sort_link(@q, :name, "名前")
+            th
+
+        tbody
+          - @masters.each do |master|
+            tr
+              td = master.id
+              td = master.name
+              td
+                button.normal_btn1.index_btn_area
+                  = link_to "編集", "/masters/#{master.id}/edit", class: "no_underbar_link"
+                button.red_btn2.index_btn_area
+                  = link_to "削除", master_path(id: master.id, schema: params[:button]), method: :delete, data: { confirm: "完全に削除しますか？", turbo: false }, class: "no_underbar_link"
