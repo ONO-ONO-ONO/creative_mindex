@@ -1,6 +1,8 @@
 class Animal < ApplicationRecord
   # 動物マスタ
 
+  include RansackAll
+
   # has_one → belongs_toという繋がりでテーブル紐づけが可能。
   # foreign_keyは関連先のカラム名、primary_keyは元のモデルのカラム名を指定
   has_one :domain, foreign_key: :code, primary_key: :domain_code
@@ -28,16 +30,6 @@ class Animal < ApplicationRecord
 
   # バリデーション
   validates :name, presence: true
-
-  # 検索可能な属性を許可
-  def self.ransackable_attributes(auth_object = nil)
-    column_names
-  end
-
-  # 検索可能な関連オブジェクトを指定
-  def self.ransackable_associations(auth_object = nil)
-    reflect_on_all_associations.map(&:name).map(&:to_s)
-  end
 
   def self.active_all
     self.where(deleted_at: nil)
