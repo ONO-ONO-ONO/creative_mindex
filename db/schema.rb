@@ -62,6 +62,14 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.datetime "deleted_at"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "small_schema"
+    t.string "big_schema"
+    t.text "note"
+    t.integer "sort"
+  end
+
   create_table "classes", force: :cascade do |t|
     t.string "name", null: false
     t.string "eng_name"

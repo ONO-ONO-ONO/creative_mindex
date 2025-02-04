@@ -1,5 +1,173 @@
 ## 生物分類系のマスタ
 
+# マスタカテゴリー
+Category.seed(
+  {
+    id: 1, name: "ドメイン", small_schema: "domain", big_schema: "Domain", sort: 10,
+    note: "生物分類学において、ドメイン（英: domain、羅: regio）は、\n
+      ドミニオン（dominion、dominium）、上界（superkingdom、superregnum）、レルム（realm）、帝国（empire、imperium）とも呼ばれ、\n
+      すべての生物を合わせた分類階級の最高位である。\n
+      ドメインは、1990年に、カール・ウーズ、オットー・カンドラー（英語版）、マーク・ウィーリス（英語版）によって\n
+      考案された3ドメイン系（英語版）の分類体系で導入された概念である。"
+  },
+  {
+    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", sort: 20,
+    note: "界（かい、英: kingdom、羅: regnum）は、\n
+      生物学におけるドメインに次いで2番目に高い分類階級である。\n
+      界は門と呼ばれるより小さなグループに分けられる。"
+  },
+  {
+    id: 3, name: "上門", small_schema: "super_phylum", big_schema: "SuperPhylum", sort: 30,
+    note: "上門（じょうもん、英: superphylum）は、\n
+      門の上に位置する分類である。"
+  },
+  {
+    id: 4, name: "門", small_schema: "phylum", big_schema: "Phylum", sort: 31,
+    note: "門（もん、英: phylum, division、複数形: phyla、羅: phylum, divisio）は、\n
+      生物分類のリンネ式階層分類における基本的分類階級のひとつであり、\n
+      またその階級に属するタクソンのことである。生物全体はおよそ100の門に分類されているが、\n
+      この数字は分類学者によって大きく異なる。界の下・綱の上に位置しており、\n
+      門の下に亜門（あもん、英: subphylum, subdivision）を置く場合もある。\n
+      \n
+      また、「phylum」という単語の複数形は本当は「phyla」であるが、\n
+      解りやすいように本アプリでは「phylums」で統一とする。"
+  },
+  {
+    id: 5, name: "亜門", small_schema: "sub_phylum", big_schema: "SubPhylum", sort: 32,
+    note: "亜門（あもん、英: subphylum, subdivision）は、\n
+      門の下に位置する分類である。"
+  },
+  {
+    id: 6, name: "上綱", small_schema: "super_class", big_schema: "SuperClasses", sort: 40,
+    note: "上綱（じょうこう、英: superclass）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 7, name: "綱", small_schema: "class", big_schema: "Classes", sort: 41,
+    note: "綱（こう、英: class、羅: classis）は、\n
+      生物の分類における階級のひとつで、\n
+      その階級に含まれるそれぞれのタクソンも綱と呼ぶ。\n
+      門と目の間に位置し、綱の下に亜綱（あこう、英: subclass、羅: subclassis）をおく場合もある。"
+  },
+  {
+    id: 8, name: "亜綱", small_schema: "sub_class", big_schema: "SubClasses", sort: 42,
+    note: "亜綱（あこう、英: subclass、羅: subclassis）は、\n
+      綱の下に位置する分類である。"
+  },
+  {
+    id: 9, name: "下綱", small_schema: "infra_class", big_schema: "InfraClasses", sort: 43,
+    note: "下綱（かこう、英: infraclass）は、\n
+      亜綱の下に位置する分類である。"
+  },
+  {
+    id: 10, name: "上目", small_schema: "super_order", big_schema: "SuperOrder", sort: 50,
+    note: "上目（じょうもく、英: superorder）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 11, name: "目", small_schema: "order", big_schema: "Order", sort: 51,
+    note: "目（もく、英: order、羅: ordo）は、\n
+      生物分類のリンネ式階級分類における基本的階級のひとつ、\n
+      および、その階級に属するタクソンのことである。\n
+      \n
+      目は、綱の下・科の上に位置する。\n
+      さらに、目の上に上目（じょうもく、英: superorder、羅: supraordo）、\n
+      目の下に亜目（あもく、英: suborder、羅: subordo）、\n
+      亜目の下に下目（かもく、英: infraorder、羅: infraordo）、\n
+      下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
+  },
+  {
+    id: 12, name: "亜目", small_schema: "sub_order", big_schema: "SubOrder", sort: 52,
+    note: "亜綱（あもく、英: suborder、羅: subordo）は、\n
+      目の下に位置する分類である。\n
+      \n
+      亜目の下に下目（かもく、英: infraorder、羅: infraordo）、\n
+      下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
+  },
+  {
+    id: 13, name: "下目", small_schema: "infra_order", big_schema: "InfraOrder", sort: 53,
+    note: "下目（かもく、英: superorder）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 14, name: "上科", small_schema: "super_families", big_schema: "SuperFamily", sort: 60,
+    note: "上科（じょうか、英: superfamily）は、\n
+      科の上に位置する分類である。"
+  },
+  {
+    id: 15, name: "科", small_schema: "families", big_schema: "Family", sort: 61,
+    note: "科（か、英: family、羅: familia）は、\n
+      生物分類のリンネ式階層分類における基本的階級の1つ、\n
+      および、その階級にあるタクソンである。\n
+      \n
+      科は、目の下・属の上にある。\n
+      また科の上に上科（じょうか、英: superfamily）、\n
+      下に亜科（あか、英: subfamily）をおく場合がある。\n
+      上科は超科（ちょうか）と表記されることもある。"
+  },
+  {
+    id: 16, name: "亜科", small_schema: "sub_families", big_schema: "SubFamily", sort: 62,
+    note: "亜科（あか、英: subfamily）は、\n
+      科の下に位置する分類である。"
+  },
+  {
+    id: 17, name: "属", small_schema: "genus", big_schema: "Genuses", sort: 70,
+    note: "属（ぞく、ラテン語: genus, pl.:genera）は、\n
+      生物分類のリンネ式階級分類における基本的階級の1つ、\n
+      および、その階級に属するタクソンである。\n
+      \n
+      属は科の下・種の上に位置する。\n
+      属の下に亜属（subgenus、pl.: subgenera）をもうけることがある。\n
+      \n
+      また、「genus」という単語の複数形は「genera」と表記されることもあるが、\n
+      本アプリでは解りやすいように「genuses」で統一とする。"
+  },
+  {
+    id: 18, name: "亜属", small_schema: "sub_genus", big_schema: "SubGenuses", sort: 71,
+    note: "亜属（subgenus、pl.: subgenera）は、\n
+      属の下に位置する分類である。"
+  },
+  {
+    id: 19, name: "種", small_schema: "species", big_schema: "Species", sort: 80,
+    note: "種（しゅ、species）とは、\n
+      生物分類上の基本単位である。\n
+      2004年時点で命名済みの種だけで200万種あり、\n
+      実際はその数倍から十数倍以上の種の存在が推定される。\n
+      新しい種が形成される現象、メカニズムを種分化という。\n
+      \n
+      ラテン語の species より、単数の場合は省略形 sp. で、\n
+      複数の場合は省略形 spp. で書き表す。\n
+      「イヌ属のある種」であれば「Canis sp.」、\n
+      「ネコ属のいくつかの種」であれば、「Felis spp.」と表現する。\n
+      \n
+      また、species の複数形は species です。\n
+      単数形と複数形が同じ形の名詞で、\n
+      生物を似た性質を持つ物同士で分類する際の基本単位のひとつです。"
+  },
+  {
+    id: 20, name: "種", small_schema: "sub_species", big_schema: "SubSpecies", sort: 81,
+    note: "亜種（あしゅ、英: subspecies）は、\n
+      種の下に位置する分類である。\n
+      新ラテン語もしくは英語の 「subspecies」 の和訳語で、\n
+      しばしば subsp. や ssp. とも略記される。\n
+      \n
+      動物学では種の直下の区分は亜種のみであるが、\n
+      植物学では変種および品種と併用している。\n
+      動物学では亜種の下位区分として品種を用いる場合があり、\n
+      犬種などがこれに該当するが、国際動物命名規約には規定されていない。\n
+      一般に動物学における亜種は、分類学的に識別される地域個体群のことをいう。"
+  },
+  {
+    id: 21, name: "レッドリスト", small_schema: "red_list", big_schema: "RedList", sort: 90,
+    note: "レッドリスト（Red List）\n
+      生物種の保全状況（ほぜんじょうきょう、Conservation status、保全状態とも）とは、\n
+      ある生物の種（それ以下の分類群も含む）が現在、\n
+      または将来的に存在している見込みを表す指標である。\n
+      保全状況を評価する際には、現在何個体生存しているか、といった単純なことだけではなく、\n
+      個体数の増減率や、繁殖の成功率、既知の脅威などさまざまな要因が考慮される。"
+  }
+)
+
 # ドメイン
 Domain.seed(
   { id: 1, name: "真核生物", eng_name: "eukarya", code: "D10", sort: 100 },
