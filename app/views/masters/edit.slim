@@ -6,7 +6,7 @@
     .info
       .default_form_area
         .basic_info
-          = "■" + t("activerecord.models.#{params[:schema].constantize.lower_case_table_name}") + " - " + @master.name
+          = "■" + t("activerecord.models.#{params[:schema].safe_constantize.lower_case_table_name}") + " - " + @master.name
         .default_form_division
           .default_form_cell
             = f.label :code, "コード"

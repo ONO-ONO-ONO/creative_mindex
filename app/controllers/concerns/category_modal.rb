@@ -29,11 +29,11 @@ module CategoryModal
 
   def category_create(items, master_selecta, set_form_object)
     # master_selectaから、テーブル名と小文字版の文字列をそれぞれ取得
-    master = master_selecta.constantize.lower_case_table_name
+    master = master_selecta.safe_constantize.lower_case_table_name
     master_table = master_selecta
 
     # 新レコードのcodeとsortを準備
-    last_record = master_selecta.constantize.all.last
+    last_record = master_selecta.safe_constantize.all.last
     last_code = last_record.code
     last_code_initial = last_code[0]
     last_code_not_initial = last_code.gsub(/^./, "")
@@ -42,7 +42,7 @@ module CategoryModal
     items[:sort] = last_record.sort.to_i + 1
 
     # 新規作成 実行
-    new_category = master_table.constantize.new(items)
+    new_category = master_table.safe_constantize.new(items)
     if new_category.save
       respond_to do |format|
         format.turbo_stream do
