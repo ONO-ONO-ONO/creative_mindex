@@ -9,7 +9,8 @@ class MastersController < ApplicationController
       @index_flg = true
     end
 
-    @schema = params[:button]
+    @schema = params[:button] if approval_models.include?(params[:button])
+
     @q = if @index_flg
       @schema.safe_constantize.ransack(params[:q])
     else
@@ -46,5 +47,23 @@ class MastersController < ApplicationController
     @master = params[:schema].safe_constantize.find(params[:id])
     @master.destroy
     redirect_to masters_url, notice: "レコードが削除されました。"
+  end
+
+  private
+
+  def approval_models
+    %w[
+      Domain
+      Kingdom
+      SuperPhylum
+      Phylum
+      SubPhylum
+      SuperClasses
+      Classes
+      SubClasses
+      InfraClasses
+      SuperOrder
+      Order
+    ].freeze
   end
 end
