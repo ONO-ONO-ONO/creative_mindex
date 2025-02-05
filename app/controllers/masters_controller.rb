@@ -2,26 +2,23 @@ class MastersController < ApplicationController
   def index
     @index_flg = false
     if params[:q].present?
-      @index_flg = true if params[:q][:big_schema].present?
-      @index_flg = true unless params[:q][:name_cont].nil?
+      # @index_flg = true if params[:q][:big_schema].present?
+      # @index_flg = true unless params[:q][:name_cont].nil?
       params[:button] = params[:q][:big_schema] if params[:q][:big_schema].present?
-      @schema = check_models(params[:button])
-    elsif params[:button].present?
+      # @schema = check_models(params[:button])
+    end
+    if params[:button].present?
       @index_flg = true
-      @schema = check_models(params[:button])
+      # @schema = check_models(params[:button])
+      @schema = Category.find(params[:button]).big_schema
     end
 
-    # 想定外の@schemaになっている場合はTOP画面に戻す
-    if @index_flg && approval_models.exclude?(@schema)
-      redirect_to "/"
+    @q = if @index_flg
+      @schema.constantize.ransack(params[:q])
     else
-      @q = if @index_flg
-        @schema.constantize.ransack(params[:q])
-      else
-        Category.ransack(params[:q])
-      end
-      @masters = @q.result.order(:sort).page(params[:page]).per(10)
+      Category.ransack(params[:q])
     end
+    @masters = @q.result.order(:sort).page(params[:page]).per(10)
   end
 
   def edit
