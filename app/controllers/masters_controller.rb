@@ -9,8 +9,9 @@ class MastersController < ApplicationController
       @index_flg = true
     end
 
+    @schema = params[:button]
     @q = if @index_flg
-      params[:button].safe_constantize.ransack(params[:q])
+      @schema.safe_constantize.ransack(params[:q])
     else
       Category.ransack(params[:q])
     end
