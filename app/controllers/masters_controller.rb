@@ -25,12 +25,12 @@ class MastersController < ApplicationController
   end
 
   def edit
-    schema = check_models(params[:schema])
+    @schema = check_models(params[:schema])
     # 想定外の@schemaになっている場合はTOP画面に戻す
     if approval_models.exclude?(schema)
       redirect_to "/"
     else
-      @master = schema.safe_constantize.find(params["id"])
+      @master = @schema.safe_constantize.find(params["id"])
     end
   end
 
