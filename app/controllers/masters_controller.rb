@@ -16,7 +16,7 @@ class MastersController < ApplicationController
       redirect_to "/"
     else
       @q = if @index_flg
-        @schema.safe_constantize.ransack(params[:q])
+        @schema.constantize.ransack(params[:q])
       else
         Category.ransack(params[:q])
       end
@@ -30,7 +30,7 @@ class MastersController < ApplicationController
     if approval_models.exclude?(schema)
       redirect_to "/"
     else
-      @master = @schema.safe_constantize.find(params["id"])
+      @master = @schema.constantize.find(params["id"])
     end
   end
 
@@ -40,14 +40,14 @@ class MastersController < ApplicationController
     if approval_models.exclude?(schema)
       redirect_to "/"
     else
-      @master = schema.safe_constantize.find(params["id"])
-      @master.name = params[schema.safe_constantize.lower_case_table_name.to_sym]["name"]
-      @master.sort = params[schema.safe_constantize.lower_case_table_name.to_sym]["sort"]
+      @master = schema.constantize.find(params["id"])
+      @master.name = params[schema.constantize.lower_case_table_name.to_sym]["name"]
+      @master.sort = params[schema.constantize.lower_case_table_name.to_sym]["sort"]
       if schema == "RedList"
-        @master.big_code = params[schema.safe_constantize.lower_case_table_name.to_sym]["big_code"]
+        @master.big_code = params[schema.constantize.lower_case_table_name.to_sym]["big_code"]
       else
-        @master.eng_name = params[schema.safe_constantize.lower_case_table_name.to_sym]["eng_name"]
-        @master.major_flg = params[schema.safe_constantize.lower_case_table_name.to_sym]["major_flg"]
+        @master.eng_name = params[schema.constantize.lower_case_table_name.to_sym]["eng_name"]
+        @master.major_flg = params[schema.constantize.lower_case_table_name.to_sym]["major_flg"]
       end
       if @master.save!
         redirect_to masters_path(button: schema), notice: "更新が成功しました" # 更新成功時
@@ -63,7 +63,7 @@ class MastersController < ApplicationController
     if approval_models.exclude?(schema)
       redirect_to "/"
     else
-      @master = schema.safe_constantize.find(params[:id])
+      @master = schema.constantize.find(params[:id])
       @master.destroy
       redirect_to masters_url, notice: "レコードが削除されました。"
     end
