@@ -23,6 +23,7 @@ ja:
       species: 種
       sub_species: 亜種
       red_list: レッドリスト
+      red_list_big_name: レッドリスト大項目
     attributes:
       animal:
         name: 名前

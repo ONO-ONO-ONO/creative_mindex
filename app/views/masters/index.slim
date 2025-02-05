@@ -14,7 +14,7 @@
           = f.submit "検索", class: "normal_btn1 index-form-btn"
     - else
       .title
-        = Category.find_by(big_schema: params[:button]).name + "一覧"
+        = Category.find_by(big_schema: params[:button]).name + " - 一覧"
 
       .category-index-search-fields
         .category-index-search
@@ -46,6 +46,6 @@
               td = master.name
               td
                 button.normal_btn1.index_btn_area
-                  = link_to "編集", "/masters/#{master.id}/edit", class: "no_underbar_link"
+                  = link_to "編集", edit_master_path(id: master.id, schema: params[:button]), class: "no_underbar_link"
                 button.red_btn2.index_btn_area
                   = link_to "削除", master_path(id: master.id, schema: params[:button]), method: :delete, data: { confirm: "完全に削除しますか？", turbo: false }, class: "no_underbar_link"

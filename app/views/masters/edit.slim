@@ -1,0 +1,38 @@
+= stylesheet_link_tag "masters/edit", media: "all", "data-turbo-track": "reload"
+- prompt_default = "-----------選択-----------"
+
+= form_with model: @master, url: master_path, local: true, data: { turbo: false } do |f|
+  .default_form
+    .info
+      .default_form_area
+        .basic_info
+          = "■" + t("activerecord.models.#{params[:schema].constantize.lower_case_table_name}") + " - " + @master.name
+        .default_form_division
+          .default_form_cell
+            = f.label :code, "コード"
+            = f.text_field :code, class: "form-control", disabled: true
+          .default_form_cell
+            = f.label :name, "名前"
+            = f.text_field :name, class: "form-control", placeholder: "必須"
+          - if !["RedList", "RedListBigName"].include?(params[:schema])
+            .default_form_cell
+              = f.label :eng_name, "英名"
+              = f.text_field :eng_name, class: "form-control"
+          - if params[:schema] == "RedList"
+            .default_form_cell
+              = f.label :big_code, "大項目"
+              = f.collection_select :big_code, RedListBigName.all, :code, :name, { prompt: "---未選択---" }, class: "form-control custom-number-size"
+          .default_form_cell
+            = f.label :sort, "ソート"
+            = f.number_field :sort, class: "form-control custom-number-size"
+          - if !["RedList", "RedListBigName"].include?(params[:schema])
+            .default_form_cell.check-box-field
+              = f.label :major_flg, "メジャーフラグ", class: "check-box-label"
+              = f.check_box :major_flg, class: "check-box"
+
+  .return_btn_area
+    .normal_btn2.form_return_submit_btn
+      = link_to "戻る", masters_path(button: params[:schema]), class: "no_underbar_link"
+
+  .submit_btn_area
+    = f.button "保存", type: "submit", value: @master.class.name, class: "normal_submit_btn"

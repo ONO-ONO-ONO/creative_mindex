@@ -86,6 +86,10 @@
   background-color: var(--bs-pagination-hover-bg);
   border-color: var(--bs-pagination-hover-border-color);
 }
+.custom-number-size {
+  width: 180px;
+  height: 35px;
+}
 
 /*
   24393F

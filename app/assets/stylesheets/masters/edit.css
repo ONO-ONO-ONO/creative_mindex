@@ -1,0 +1,32 @@
+.check-box-field {
+  display: flex;
+  justify-content: center;
+}
+
+.check-box-label {
+  padding-top: 26px;
+  width: 82px;
+}
+
+.check-box {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+.form_return_submit_btn {
+  padding: 3px 14px;
+}
+
+.return_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1114px;
+}
+
+.submit_btn_area {
+  z-index: 20;
+  position: fixed;
+  top: 58px;
+  left: 1180px;
+}
