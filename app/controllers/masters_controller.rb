@@ -9,7 +9,9 @@ class MastersController < ApplicationController
       @index_flg = true
     end
 
-    @schema = params[:button] if approval_models.include?(params[:button])
+    # @schema = params[:button] if approval_models.include?(params[:button])
+
+    @schema = check_models(params[:button])
 
     @q = if @index_flg
       @schema.safe_constantize.ransack(params[:q])
@@ -47,6 +49,13 @@ class MastersController < ApplicationController
     @master = params[:schema].safe_constantize.find(params[:id])
     @master.destroy
     redirect_to masters_url, notice: "レコードが削除されました。"
+  end
+
+  def check_models(model)
+    case model
+    when "Domain"
+      "Domainaaaa"
+    end
   end
 
   private
