@@ -35,4 +35,4 @@
       = link_to "戻る", masters_path(button: params[:schema]), class: "no_underbar_link"
 
   .submit_btn_area
-    = f.button "保存", type: "submit", value: @master.class.name, class: "normal_submit_btn"
+    = f.button "保存", type: "submit", value: Category.find_by(big_schema: @master.class.name).id, class: "normal_submit_btn"
