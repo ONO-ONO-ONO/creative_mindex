@@ -35,7 +35,7 @@ class MastersController < ApplicationController
   end
 
   def update
-    schema = params[:button] if params[:button].present?
+    schema = check_models(params[:button])
     # 想定外の@schemaになっている場合はTOP画面に戻す
     if approval_models.exclude?(schema)
       redirect_to "/"
@@ -58,7 +58,7 @@ class MastersController < ApplicationController
   end
 
   def destroy
-    schema = params[:schema] if params[:schema].present?
+    schema = check_models(params[:schema])
     # 想定外の@schemaになっている場合はTOP画面に戻す
     if approval_models.exclude?(schema)
       redirect_to "/"
