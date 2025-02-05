@@ -145,7 +145,7 @@ Category.seed(
       生物を似た性質を持つ物同士で分類する際の基本単位のひとつです。"
   },
   {
-    id: 20, name: "種", small_schema: "sub_species", big_schema: "SubSpecies", sort: 81,
+    id: 20, name: "亜種", small_schema: "sub_species", big_schema: "SubSpecies", sort: 81,
     note: "亜種（あしゅ、英: subspecies）は、\n
       種の下に位置する分類である。\n
       新ラテン語もしくは英語の 「subspecies」 の和訳語で、\n
@@ -165,6 +165,10 @@ Category.seed(
       または将来的に存在している見込みを表す指標である。\n
       保全状況を評価する際には、現在何個体生存しているか、といった単純なことだけではなく、\n
       個体数の増減率や、繁殖の成功率、既知の脅威などさまざまな要因が考慮される。"
+  },
+  {
+    id: 22, name: "レッドリスト大項目", small_schema: "red_list_big_name", big_schema: "RedListBigName", sort: 91,
+    note: "レッドリストの大項目。"
   }
 )
 
@@ -384,17 +388,27 @@ SubSpecies.seed(
   { id: 7, name: "アムールトラ", eng_name: "altaica", code: "aS10005", parent_code: "S10011" },
 )
 
+# レッドリスト大項目
+RedListBigName.seed(
+  { id: 1, name: "低リスク", code: "B_LC", sort: 10 },
+  { id: 2, name: "絶滅危惧", code: "B_EN", sort: 20 },
+  { id: 3, name: "絶滅", code: "B_EX", sort: 30 },
+  { id: 4, name: "その他", code: "B_AN", sort: 40 },
+  { id: 5, name: "架空", code: "B_FC", sort: 50 },
+)
+
+
 # レッドリスト
 RedList.seed(
-  { id: 1, name: "LC: 低危険種", big_name: "低リスク", code: "LC", sort: 10 },
-  { id: 2, name: "NT: 準絶滅危惧", big_name: "低リスク", code: "NT", sort: 11 },
-  { id: 3, name: "CD: 保全対策依存", big_name: "低リスク", code: "CD", sort: 12 },
-  { id: 4, name: "VU: 危急", big_name: "絶滅危惧", code: "VU", sort: 20 },
-  { id: 5, name: "EN: 絶滅危惧", big_name: "絶滅危惧", code: "EN", sort: 21 },
-  { id: 6, name: "CR: 絶滅寸前 ", big_name: "絶滅危惧", code: "CR", sort: 22 },
-  { id: 7, name: "EW: 野生絶滅", big_name: "絶滅", code: "EW", sort: 30 },
-  { id: 8, name: "EX: 絶滅", big_name: "絶滅", code: "EX", sort: 31 },
-  { id: 9, name: "DD: データ不足", big_name: "その他", code: "DD", sort: 40 },
-  { id: 10, name: "NE: 未評価", big_name: "その他", code: "NE", sort: 41 },
-  { id: 11, name: "FC: 架空", big_name: "架空", code: "FC", sort: 90 },
+  { id: 1, name: "LC: 低危険種", big_code: "B_LC", code: "LC", sort: 10 },
+  { id: 2, name: "NT: 準絶滅危惧", big_code: "B_LC", code: "NT", sort: 11 },
+  { id: 3, name: "CD: 保全対策依存", big_code: "B_LC", code: "CD", sort: 12 },
+  { id: 4, name: "VU: 危急", big_code: "B_EN", code: "VU", sort: 20 },
+  { id: 5, name: "EN: 絶滅危惧", big_code: "B_EN", code: "EN", sort: 21 },
+  { id: 6, name: "CR: 絶滅寸前 ", big_code: "B_EN", code: "CR", sort: 22 },
+  { id: 7, name: "EW: 野生絶滅", big_code: "B_EX", code: "EW", sort: 30 },
+  { id: 8, name: "EX: 絶滅", big_code: "B_EX", code: "EX", sort: 31 },
+  { id: 9, name: "DD: データ不足", big_code: "B_AN", code: "DD", sort: 40 },
+  { id: 10, name: "NE: 未評価", big_code: "B_AN", code: "NE", sort: 41 },
+  { id: 11, name: "FC: 架空", big_code: "B_FC", code: "FC", sort: 90 },
 )

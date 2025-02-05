@@ -1,6 +1,6 @@
 create_table :red_lists, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
   t.string :name, null: false # 名前
-  t.string :big_name, null: false # 大項目
+  t.string :big_code, null: false # 大項目
   t.string :code, null: false # コード
   t.integer :sort # ソート
 end

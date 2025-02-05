@@ -150,9 +150,15 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.integer "sort"
   end
 
+  create_table "red_list_big_names", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "code", null: false
+    t.integer "sort"
+  end
+
   create_table "red_lists", force: :cascade do |t|
     t.string "name", null: false
-    t.string "big_name", null: false
+    t.string "big_code", null: false
     t.string "code", null: false
     t.integer "sort"
   end

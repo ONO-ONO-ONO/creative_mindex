@@ -28,3 +28,4 @@ require "sub_genuses.schema.rb" # 亜属(あぞく)マスタ
 require "species.schema.rb" # 種(しゅ)マスタ
 require "sub_species.schema.rb" # 亜種(あしゅ)マスタ
 require "red_lists.schema.rb" # レッドリストマスタ
+require "red_list_big_names.schema.rb" # レッドリスト大項目マスタ
