@@ -11,7 +11,7 @@ Category.seed(
       考案された3ドメイン系（英語版）の分類体系で導入された概念である。"
   },
   {
-    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", plural_schema: "Kingdoms", sort: 20,
+    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", plural_schema: "kingdoms", sort: 20,
     note: "界（かい、英: kingdom、羅: regnum）は、\n
       生物学におけるドメインに次いで2番目に高い分類階級である。\n
       界は門と呼ばれるより小さなグループに分けられる。"
@@ -90,12 +90,12 @@ Category.seed(
       綱の上に位置する分類である。"
   },
   {
-    id: 14, name: "上科", small_schema: "super_families", big_schema: "SuperFamily", plural_schema: "super_families", sort: 60,
+    id: 14, name: "上科", small_schema: "super_family", big_schema: "SuperFamily", plural_schema: "super_families", sort: 60,
     note: "上科（じょうか、英: superfamily）は、\n
       科の上に位置する分類である。"
   },
   {
-    id: 15, name: "科", small_schema: "families", big_schema: "Family", plural_schema: "families", sort: 61,
+    id: 15, name: "科", small_schema: "family", big_schema: "Family", plural_schema: "families", sort: 61,
     note: "科（か、英: family、羅: familia）は、\n
       生物分類のリンネ式階層分類における基本的階級の1つ、\n
       および、その階級にあるタクソンである。\n
@@ -106,12 +106,12 @@ Category.seed(
       上科は超科（ちょうか）と表記されることもある。"
   },
   {
-    id: 16, name: "亜科", small_schema: "sub_families", big_schema: "SubFamily", plural_schema: "sub_families", sort: 62,
+    id: 16, name: "亜科", small_schema: "sub_family", big_schema: "SubFamily", plural_schema: "sub_families", sort: 62,
     note: "亜科（あか、英: subfamily）は、\n
       科の下に位置する分類である。"
   },
   {
-    id: 17, name: "属", small_schema: "genus", big_schema: "Genuses", plural_schema: "genuses", sort: 70,
+    id: 17, name: "属", small_schema: "genuses", big_schema: "Genuses", plural_schema: "genuses", sort: 70,
     note: "属（ぞく、ラテン語: genus, pl.:genera）は、\n
       生物分類のリンネ式階級分類における基本的階級の1つ、\n
       および、その階級に属するタクソンである。\n
@@ -123,7 +123,7 @@ Category.seed(
       本アプリでは解りやすいように「genuses」で統一とする。"
   },
   {
-    id: 18, name: "亜属", small_schema: "sub_genus", big_schema: "SubGenuses", plural_schema: "sub_genuses", sort: 71,
+    id: 18, name: "亜属", small_schema: "sub_genuses", big_schema: "SubGenuses", plural_schema: "sub_genuses", sort: 71,
     note: "亜属（subgenus、pl.: subgenera）は、\n
       属の下に位置する分類である。"
   },
