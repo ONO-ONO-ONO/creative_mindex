@@ -1,5 +1,177 @@
 ## 生物分類系のマスタ
 
+# マスタカテゴリー
+Category.seed(
+  {
+    id: 1, name: "ドメイン", small_schema: "domain", big_schema: "Domain", plural_schema: "domains", sort: 10,
+    note: "生物分類学において、ドメイン（英: domain、羅: regio）は、\n
+      ドミニオン（dominion、dominium）、上界（superkingdom、superregnum）、レルム（realm）、帝国（empire、imperium）とも呼ばれ、\n
+      すべての生物を合わせた分類階級の最高位である。\n
+      ドメインは、1990年に、カール・ウーズ、オットー・カンドラー（英語版）、マーク・ウィーリス（英語版）によって\n
+      考案された3ドメイン系（英語版）の分類体系で導入された概念である。"
+  },
+  {
+    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", plural_schema: "kingdoms", sort: 20,
+    note: "界（かい、英: kingdom、羅: regnum）は、\n
+      生物学におけるドメインに次いで2番目に高い分類階級である。\n
+      界は門と呼ばれるより小さなグループに分けられる。"
+  },
+  {
+    id: 3, name: "上門", small_schema: "super_phylum", big_schema: "SuperPhylum", plural_schema: "super_phylums", sort: 30,
+    note: "上門（じょうもん、英: superphylum）は、\n
+      門の上に位置する分類である。"
+  },
+  {
+    id: 4, name: "門", small_schema: "phylum", big_schema: "Phylum", plural_schema: "phylums", sort: 31,
+    note: "門（もん、英: phylum, division、複数形: phyla、羅: phylum, divisio）は、\n
+      生物分類のリンネ式階層分類における基本的分類階級のひとつであり、\n
+      またその階級に属するタクソンのことである。生物全体はおよそ100の門に分類されているが、\n
+      この数字は分類学者によって大きく異なる。界の下・綱の上に位置しており、\n
+      門の下に亜門（あもん、英: subphylum, subdivision）を置く場合もある。\n
+      \n
+      また、「phylum」という単語の複数形は本当は「phyla」であるが、\n
+      解りやすいように本アプリでは「phylums」で統一とする。"
+  },
+  {
+    id: 5, name: "亜門", small_schema: "sub_phylum", big_schema: "SubPhylum", plural_schema: "sub_phylums", sort: 32,
+    note: "亜門（あもん、英: subphylum, subdivision）は、\n
+      門の下に位置する分類である。"
+  },
+  {
+    id: 6, name: "上綱", small_schema: "super_class", big_schema: "SuperClasses", plural_schema: "super_classes", sort: 40,
+    note: "上綱（じょうこう、英: superclass）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 7, name: "綱", small_schema: "class", big_schema: "Classes", plural_schema: "classes", sort: 41,
+    note: "綱（こう、英: class、羅: classis）は、\n
+      生物の分類における階級のひとつで、\n
+      その階級に含まれるそれぞれのタクソンも綱と呼ぶ。\n
+      門と目の間に位置し、綱の下に亜綱（あこう、英: subclass、羅: subclassis）をおく場合もある。"
+  },
+  {
+    id: 8, name: "亜綱", small_schema: "sub_class", big_schema: "SubClasses", plural_schema: "sub_classes", sort: 42,
+    note: "亜綱（あこう、英: subclass、羅: subclassis）は、\n
+      綱の下に位置する分類である。"
+  },
+  {
+    id: 9, name: "下綱", small_schema: "infra_class", big_schema: "InfraClasses", plural_schema: "infra_classes", sort: 43,
+    note: "下綱（かこう、英: infraclass）は、\n
+      亜綱の下に位置する分類である。"
+  },
+  {
+    id: 10, name: "上目", small_schema: "super_order", big_schema: "SuperOrder", plural_schema: "super_orders", sort: 50,
+    note: "上目（じょうもく、英: superorder）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 11, name: "目", small_schema: "order", big_schema: "Order", plural_schema: "orders", sort: 51,
+    note: "目（もく、英: order、羅: ordo）は、\n
+      生物分類のリンネ式階級分類における基本的階級のひとつ、\n
+      および、その階級に属するタクソンのことである。\n
+      \n
+      目は、綱の下・科の上に位置する。\n
+      さらに、目の上に上目（じょうもく、英: superorder、羅: supraordo）、\n
+      目の下に亜目（あもく、英: suborder、羅: subordo）、\n
+      亜目の下に下目（かもく、英: infraorder、羅: infraordo）、\n
+      下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
+  },
+  {
+    id: 12, name: "亜目", small_schema: "sub_order", big_schema: "SubOrder", plural_schema: "sub_orders", sort: 52,
+    note: "亜綱（あもく、英: suborder、羅: subordo）は、\n
+      目の下に位置する分類である。\n
+      \n
+      亜目の下に下目（かもく、英: infraorder、羅: infraordo）、\n
+      下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
+  },
+  {
+    id: 13, name: "下目", small_schema: "infra_order", big_schema: "InfraOrder", plural_schema: "infra_orders", sort: 53,
+    note: "下目（かもく、英: superorder）は、\n
+      綱の上に位置する分類である。"
+  },
+  {
+    id: 14, name: "上科", small_schema: "super_family", big_schema: "SuperFamily", plural_schema: "super_families", sort: 60,
+    note: "上科（じょうか、英: superfamily）は、\n
+      科の上に位置する分類である。"
+  },
+  {
+    id: 15, name: "科", small_schema: "family", big_schema: "Family", plural_schema: "families", sort: 61,
+    note: "科（か、英: family、羅: familia）は、\n
+      生物分類のリンネ式階層分類における基本的階級の1つ、\n
+      および、その階級にあるタクソンである。\n
+      \n
+      科は、目の下・属の上にある。\n
+      また科の上に上科（じょうか、英: superfamily）、\n
+      下に亜科（あか、英: subfamily）をおく場合がある。\n
+      上科は超科（ちょうか）と表記されることもある。"
+  },
+  {
+    id: 16, name: "亜科", small_schema: "sub_family", big_schema: "SubFamily", plural_schema: "sub_families", sort: 62,
+    note: "亜科（あか、英: subfamily）は、\n
+      科の下に位置する分類である。"
+  },
+  {
+    id: 17, name: "属", small_schema: "genuses", big_schema: "Genuses", plural_schema: "genuses", sort: 70,
+    note: "属（ぞく、ラテン語: genus, pl.:genera）は、\n
+      生物分類のリンネ式階級分類における基本的階級の1つ、\n
+      および、その階級に属するタクソンである。\n
+      \n
+      属は科の下・種の上に位置する。\n
+      属の下に亜属（subgenus、pl.: subgenera）をもうけることがある。\n
+      \n
+      また、「genus」という単語の複数形は「genera」と表記されることもあるが、\n
+      本アプリでは解りやすいように「genuses」で統一とする。"
+  },
+  {
+    id: 18, name: "亜属", small_schema: "sub_genuses", big_schema: "SubGenuses", plural_schema: "sub_genuses", sort: 71,
+    note: "亜属（subgenus、pl.: subgenera）は、\n
+      属の下に位置する分類である。"
+  },
+  {
+    id: 19, name: "種", small_schema: "species", big_schema: "Species", plural_schema: "species", sort: 80,
+    note: "種（しゅ、species）とは、\n
+      生物分類上の基本単位である。\n
+      2004年時点で命名済みの種だけで200万種あり、\n
+      実際はその数倍から十数倍以上の種の存在が推定される。\n
+      新しい種が形成される現象、メカニズムを種分化という。\n
+      \n
+      ラテン語の species より、単数の場合は省略形 sp. で、\n
+      複数の場合は省略形 spp. で書き表す。\n
+      「イヌ属のある種」であれば「Canis sp.」、\n
+      「ネコ属のいくつかの種」であれば、「Felis spp.」と表現する。\n
+      \n
+      また、species の複数形は species です。\n
+      単数形と複数形が同じ形の名詞で、\n
+      生物を似た性質を持つ物同士で分類する際の基本単位のひとつです。"
+  },
+  {
+    id: 20, name: "亜種", small_schema: "sub_species", big_schema: "SubSpecies", plural_schema: "sub_species", sort: 81,
+    note: "亜種（あしゅ、英: subspecies）は、\n
+      種の下に位置する分類である。\n
+      新ラテン語もしくは英語の 「subspecies」 の和訳語で、\n
+      しばしば subsp. や ssp. とも略記される。\n
+      \n
+      動物学では種の直下の区分は亜種のみであるが、\n
+      植物学では変種および品種と併用している。\n
+      動物学では亜種の下位区分として品種を用いる場合があり、\n
+      犬種などがこれに該当するが、国際動物命名規約には規定されていない。\n
+      一般に動物学における亜種は、分類学的に識別される地域個体群のことをいう。"
+  },
+  {
+    id: 21, name: "レッドリスト", small_schema: "red_list", big_schema: "RedList", plural_schema: "red_lists", sort: 90,
+    note: "レッドリスト（Red List）\n
+      生物種の保全状況（ほぜんじょうきょう、Conservation status、保全状態とも）とは、\n
+      ある生物の種（それ以下の分類群も含む）が現在、\n
+      または将来的に存在している見込みを表す指標である。\n
+      保全状況を評価する際には、現在何個体生存しているか、といった単純なことだけではなく、\n
+      個体数の増減率や、繁殖の成功率、既知の脅威などさまざまな要因が考慮される。"
+  },
+  {
+    id: 22, name: "レッドリスト大項目", small_schema: "red_list_big_name", big_schema: "RedListBigName", plural_schema: "red_list_big_names", sort: 91,
+    note: "レッドリストの大項目。"
+  }
+)
+
 # ドメイン
 Domain.seed(
   { id: 1, name: "真核生物", eng_name: "eukarya", code: "D10", sort: 100 },
@@ -216,17 +388,27 @@ SubSpecies.seed(
   { id: 7, name: "アムールトラ", eng_name: "altaica", code: "aS10005", parent_code: "S10011" },
 )
 
+# レッドリスト大項目
+RedListBigName.seed(
+  { id: 1, name: "低リスク", code: "B_LC", sort: 10 },
+  { id: 2, name: "絶滅危惧", code: "B_EN", sort: 20 },
+  { id: 3, name: "絶滅", code: "B_EX", sort: 30 },
+  { id: 4, name: "その他", code: "B_AN", sort: 40 },
+  { id: 5, name: "架空", code: "B_FC", sort: 50 },
+)
+
+
 # レッドリスト
 RedList.seed(
-  { id: 1, name: "LC: 低危険種", big_name: "低リスク", code: "LC", sort: 10 },
-  { id: 2, name: "NT: 準絶滅危惧", big_name: "低リスク", code: "NT", sort: 11 },
-  { id: 3, name: "CD: 保全対策依存", big_name: "低リスク", code: "CD", sort: 12 },
-  { id: 4, name: "VU: 危急", big_name: "絶滅危惧", code: "VU", sort: 20 },
-  { id: 5, name: "EN: 絶滅危惧", big_name: "絶滅危惧", code: "EN", sort: 21 },
-  { id: 6, name: "CR: 絶滅寸前 ", big_name: "絶滅危惧", code: "CR", sort: 22 },
-  { id: 7, name: "EW: 野生絶滅", big_name: "絶滅", code: "EW", sort: 30 },
-  { id: 8, name: "EX: 絶滅", big_name: "絶滅", code: "EX", sort: 31 },
-  { id: 9, name: "DD: データ不足", big_name: "その他", code: "DD", sort: 40 },
-  { id: 10, name: "NE: 未評価", big_name: "その他", code: "NE", sort: 41 },
-  { id: 11, name: "FC: 架空", big_name: "架空", code: "FC", sort: 90 },
+  { id: 1, name: "LC: 低危険種", big_code: "B_LC", code: "LC", sort: 10 },
+  { id: 2, name: "NT: 準絶滅危惧", big_code: "B_LC", code: "NT", sort: 11 },
+  { id: 3, name: "CD: 保全対策依存", big_code: "B_LC", code: "CD", sort: 12 },
+  { id: 4, name: "VU: 危急", big_code: "B_EN", code: "VU", sort: 20 },
+  { id: 5, name: "EN: 絶滅危惧", big_code: "B_EN", code: "EN", sort: 21 },
+  { id: 6, name: "CR: 絶滅寸前 ", big_code: "B_EN", code: "CR", sort: 22 },
+  { id: 7, name: "EW: 野生絶滅", big_code: "B_EX", code: "EW", sort: 30 },
+  { id: 8, name: "EX: 絶滅", big_code: "B_EX", code: "EX", sort: 31 },
+  { id: 9, name: "DD: データ不足", big_code: "B_AN", code: "DD", sort: 40 },
+  { id: 10, name: "NE: 未評価", big_code: "B_AN", code: "NE", sort: 41 },
+  { id: 11, name: "FC: 架空", big_code: "B_FC", code: "FC", sort: 90 },
 )

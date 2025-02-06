@@ -5,6 +5,12 @@
 ```
 bundle exec rails s
 ```
+* Rails 8.0 は以下コマンド推奨　
+```
+bin/dev
+```
+※「bin/dev」でProcfile.dev を使用し、Rails サーバー + Tailwind・esbuild などの開発ツールも同時に起動する。
+　「bundle exec rails s」はGemfile.lock に記載されたバージョンの Rails でサーバーを起動。
 
 * コンソール立ち上げ
 ```

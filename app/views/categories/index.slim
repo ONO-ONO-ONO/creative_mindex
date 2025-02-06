@@ -1,0 +1,13 @@
+= stylesheet_link_tag "masters/index", media: "all", "data-turbo-track": "reload"
+
+= search_form_for @q, url: set_category_categories_path, method: :get, class: "search-form" do |f|
+  .category-index
+    .title
+      = "表示するマスタを選択"
+
+    .category-index-search-fields
+      .category-index-search.category-select-field
+        = f.collection_select :big_schema, Category.all, :id, :name, {}, class: "form-control category-select-box"
+
+      .category-index-search.category-select-field.category-select-btn
+        = f.submit "検索", class: "normal_btn1 index-form-btn"

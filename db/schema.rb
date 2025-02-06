@@ -62,6 +62,15 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.datetime "deleted_at"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "small_schema"
+    t.string "big_schema"
+    t.string "plural_schema"
+    t.text "note"
+    t.integer "sort"
+  end
+
   create_table "classes", force: :cascade do |t|
     t.string "name", null: false
     t.string "eng_name"
@@ -142,9 +151,15 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.integer "sort"
   end
 
+  create_table "red_list_big_names", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "code", null: false
+    t.integer "sort"
+  end
+
   create_table "red_lists", force: :cascade do |t|
     t.string "name", null: false
-    t.string "big_name", null: false
+    t.string "big_code", null: false
     t.string "code", null: false
     t.integer "sort"
   end

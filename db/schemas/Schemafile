@@ -6,6 +6,7 @@ require "tests.schema.rb"
 require "users.schema.rb"
 require "animals.schema.rb" # 動物マスタ
 require "animal_images.schema.rb" # 動物画像テーブル
+require "categories.schema.rb" # カテゴリーマスタ
 require "domains.schema.rb" # ドメインマスタ
 require "kingdoms.schema.rb" # 界(かい)マスタ
 require "super_phylums.schema.rb" # 上門(じょうもん)マスタ
@@ -27,3 +28,4 @@ require "sub_genuses.schema.rb" # 亜属(あぞく)マスタ
 require "species.schema.rb" # 種(しゅ)マスタ
 require "sub_species.schema.rb" # 亜種(あしゅ)マスタ
 require "red_lists.schema.rb" # レッドリストマスタ
+require "red_list_big_names.schema.rb" # レッドリスト大項目マスタ

@@ -29,16 +29,20 @@
       .another_name_area
         .another_name_title.red_list_title
           = "レッドリスト"
-        - if animal.red_list&.big_name == "低リスク"
+        - if animal.red_list&.big_code == "B_LC"
           .red_list_name.label_green
             = animal.red_list&.name
-        - elsif animal.red_list&.big_name == "絶滅危惧"
+        - elsif animal.red_list&.big_code == "B_EN"
           .red_list_name.label_yellow
             = animal.red_list&.name
-        - elsif animal.red_list&.big_name == "絶滅"
+        - elsif animal.red_list&.big_code == "B_EX"
           .red_list_name.label_red
             = animal.red_list&.name
-        - elsif animal.red_list&.big_name == "その他"
+        - elsif animal.red_list&.big_code == "B_AN"
+          .red_list_name.label_blue
+            = animal.red_list&.name
+        - elsif animal.red_list&.big_code == "B_FC"
+          / 架空版の背景色を用意予定
           .red_list_name.label_blue
             = animal.red_list&.name
         - else
