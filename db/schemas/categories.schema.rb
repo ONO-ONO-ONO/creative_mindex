@@ -2,6 +2,7 @@ create_table :categories, force: :cascade, charset: "utf8mb4", collation: "utf8m
   t.string :name, null: false # 名前
   t.string :small_schema # 小文字テーブル名
   t.string :big_schema # 大文字テーブル名
+  t.string :plural_schema # 複数形の文字テーブル名
   t.text :note # ノート
   t.integer :sort # ソート
 end

@@ -66,6 +66,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.string "name", null: false
     t.string "small_schema"
     t.string "big_schema"
+    t.string "plural_schema"
     t.text "note"
     t.integer "sort"
   end

@@ -1,12 +1,12 @@
 = stylesheet_link_tag "masters/edit", media: "all", "data-turbo-track": "reload"
 - prompt_default = "-----------選択-----------"
 
-= form_with model: @master, url: master_path, local: true, data: { turbo: false } do |f|
+= form_with model: @master, url: "/#{@plural_schema_name}/#{params["id"]}", local: true, data: { turbo: false } do |f|
   .default_form
     .info
       .default_form_area
         .basic_info
-          = "■" + t("activerecord.models.#{@schema.constantize.lower_case_table_name}") + " - " + @master.name
+          = "■#{@schema_name} - #{@master.name}"
         .default_form_division
           .default_form_cell
             = f.label :code, "コード"
@@ -32,7 +32,7 @@
 
   .return_btn_area
     .normal_btn2.form_return_submit_btn
-      = link_to "戻る", masters_path(button: params[:schema]), class: "no_underbar_link"
+      = link_to "戻る", "/#{@plural_schema_name}", class: "no_underbar_link"
 
   .submit_btn_area
-    = f.button "保存", type: "submit", value: Category.find_by(big_schema: @master.class.name).id, class: "normal_submit_btn"
+    = f.button "保存", type: "submit", class: "normal_submit_btn"

@@ -3,7 +3,7 @@
 # マスタカテゴリー
 Category.seed(
   {
-    id: 1, name: "ドメイン", small_schema: "domain", big_schema: "Domain", sort: 10,
+    id: 1, name: "ドメイン", small_schema: "domain", big_schema: "Domain", plural_schema: "domains", sort: 10,
     note: "生物分類学において、ドメイン（英: domain、羅: regio）は、\n
       ドミニオン（dominion、dominium）、上界（superkingdom、superregnum）、レルム（realm）、帝国（empire、imperium）とも呼ばれ、\n
       すべての生物を合わせた分類階級の最高位である。\n
@@ -11,18 +11,18 @@ Category.seed(
       考案された3ドメイン系（英語版）の分類体系で導入された概念である。"
   },
   {
-    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", sort: 20,
+    id: 2, name: "界", small_schema: "kingdom", big_schema: "Kingdom", plural_schema: "Kingdoms", sort: 20,
     note: "界（かい、英: kingdom、羅: regnum）は、\n
       生物学におけるドメインに次いで2番目に高い分類階級である。\n
       界は門と呼ばれるより小さなグループに分けられる。"
   },
   {
-    id: 3, name: "上門", small_schema: "super_phylum", big_schema: "SuperPhylum", sort: 30,
+    id: 3, name: "上門", small_schema: "super_phylum", big_schema: "SuperPhylum", plural_schema: "super_phylums", sort: 30,
     note: "上門（じょうもん、英: superphylum）は、\n
       門の上に位置する分類である。"
   },
   {
-    id: 4, name: "門", small_schema: "phylum", big_schema: "Phylum", sort: 31,
+    id: 4, name: "門", small_schema: "phylum", big_schema: "Phylum", plural_schema: "phylums", sort: 31,
     note: "門（もん、英: phylum, division、複数形: phyla、羅: phylum, divisio）は、\n
       生物分類のリンネ式階層分類における基本的分類階級のひとつであり、\n
       またその階級に属するタクソンのことである。生物全体はおよそ100の門に分類されているが、\n
@@ -33,39 +33,39 @@ Category.seed(
       解りやすいように本アプリでは「phylums」で統一とする。"
   },
   {
-    id: 5, name: "亜門", small_schema: "sub_phylum", big_schema: "SubPhylum", sort: 32,
+    id: 5, name: "亜門", small_schema: "sub_phylum", big_schema: "SubPhylum", plural_schema: "sub_phylums", sort: 32,
     note: "亜門（あもん、英: subphylum, subdivision）は、\n
       門の下に位置する分類である。"
   },
   {
-    id: 6, name: "上綱", small_schema: "super_class", big_schema: "SuperClasses", sort: 40,
+    id: 6, name: "上綱", small_schema: "super_class", big_schema: "SuperClasses", plural_schema: "super_classes", sort: 40,
     note: "上綱（じょうこう、英: superclass）は、\n
       綱の上に位置する分類である。"
   },
   {
-    id: 7, name: "綱", small_schema: "class", big_schema: "Classes", sort: 41,
+    id: 7, name: "綱", small_schema: "class", big_schema: "Classes", plural_schema: "classes", sort: 41,
     note: "綱（こう、英: class、羅: classis）は、\n
       生物の分類における階級のひとつで、\n
       その階級に含まれるそれぞれのタクソンも綱と呼ぶ。\n
       門と目の間に位置し、綱の下に亜綱（あこう、英: subclass、羅: subclassis）をおく場合もある。"
   },
   {
-    id: 8, name: "亜綱", small_schema: "sub_class", big_schema: "SubClasses", sort: 42,
+    id: 8, name: "亜綱", small_schema: "sub_class", big_schema: "SubClasses", plural_schema: "sub_classes", sort: 42,
     note: "亜綱（あこう、英: subclass、羅: subclassis）は、\n
       綱の下に位置する分類である。"
   },
   {
-    id: 9, name: "下綱", small_schema: "infra_class", big_schema: "InfraClasses", sort: 43,
+    id: 9, name: "下綱", small_schema: "infra_class", big_schema: "InfraClasses", plural_schema: "infra_classes", sort: 43,
     note: "下綱（かこう、英: infraclass）は、\n
       亜綱の下に位置する分類である。"
   },
   {
-    id: 10, name: "上目", small_schema: "super_order", big_schema: "SuperOrder", sort: 50,
+    id: 10, name: "上目", small_schema: "super_order", big_schema: "SuperOrder", plural_schema: "super_orders", sort: 50,
     note: "上目（じょうもく、英: superorder）は、\n
       綱の上に位置する分類である。"
   },
   {
-    id: 11, name: "目", small_schema: "order", big_schema: "Order", sort: 51,
+    id: 11, name: "目", small_schema: "order", big_schema: "Order", plural_schema: "orders", sort: 51,
     note: "目（もく、英: order、羅: ordo）は、\n
       生物分類のリンネ式階級分類における基本的階級のひとつ、\n
       および、その階級に属するタクソンのことである。\n
@@ -77,7 +77,7 @@ Category.seed(
       下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
   },
   {
-    id: 12, name: "亜目", small_schema: "sub_order", big_schema: "SubOrder", sort: 52,
+    id: 12, name: "亜目", small_schema: "sub_order", big_schema: "SubOrder", plural_schema: "sub_orders", sort: 52,
     note: "亜綱（あもく、英: suborder、羅: subordo）は、\n
       目の下に位置する分類である。\n
       \n
@@ -85,17 +85,17 @@ Category.seed(
       下目の下に小目（しょうもく、英: parvorder、羅: parvordo）を置くことがある。"
   },
   {
-    id: 13, name: "下目", small_schema: "infra_order", big_schema: "InfraOrder", sort: 53,
+    id: 13, name: "下目", small_schema: "infra_order", big_schema: "InfraOrder", plural_schema: "infra_orders", sort: 53,
     note: "下目（かもく、英: superorder）は、\n
       綱の上に位置する分類である。"
   },
   {
-    id: 14, name: "上科", small_schema: "super_families", big_schema: "SuperFamily", sort: 60,
+    id: 14, name: "上科", small_schema: "super_families", big_schema: "SuperFamily", plural_schema: "super_families", sort: 60,
     note: "上科（じょうか、英: superfamily）は、\n
       科の上に位置する分類である。"
   },
   {
-    id: 15, name: "科", small_schema: "families", big_schema: "Family", sort: 61,
+    id: 15, name: "科", small_schema: "families", big_schema: "Family", plural_schema: "families", sort: 61,
     note: "科（か、英: family、羅: familia）は、\n
       生物分類のリンネ式階層分類における基本的階級の1つ、\n
       および、その階級にあるタクソンである。\n
@@ -106,12 +106,12 @@ Category.seed(
       上科は超科（ちょうか）と表記されることもある。"
   },
   {
-    id: 16, name: "亜科", small_schema: "sub_families", big_schema: "SubFamily", sort: 62,
+    id: 16, name: "亜科", small_schema: "sub_families", big_schema: "SubFamily", plural_schema: "sub_families", sort: 62,
     note: "亜科（あか、英: subfamily）は、\n
       科の下に位置する分類である。"
   },
   {
-    id: 17, name: "属", small_schema: "genus", big_schema: "Genuses", sort: 70,
+    id: 17, name: "属", small_schema: "genus", big_schema: "Genuses", plural_schema: "genuses", sort: 70,
     note: "属（ぞく、ラテン語: genus, pl.:genera）は、\n
       生物分類のリンネ式階級分類における基本的階級の1つ、\n
       および、その階級に属するタクソンである。\n
@@ -123,12 +123,12 @@ Category.seed(
       本アプリでは解りやすいように「genuses」で統一とする。"
   },
   {
-    id: 18, name: "亜属", small_schema: "sub_genus", big_schema: "SubGenuses", sort: 71,
+    id: 18, name: "亜属", small_schema: "sub_genus", big_schema: "SubGenuses", plural_schema: "sub_genuses", sort: 71,
     note: "亜属（subgenus、pl.: subgenera）は、\n
       属の下に位置する分類である。"
   },
   {
-    id: 19, name: "種", small_schema: "species", big_schema: "Species", sort: 80,
+    id: 19, name: "種", small_schema: "species", big_schema: "Species", plural_schema: "species", sort: 80,
     note: "種（しゅ、species）とは、\n
       生物分類上の基本単位である。\n
       2004年時点で命名済みの種だけで200万種あり、\n
@@ -145,7 +145,7 @@ Category.seed(
       生物を似た性質を持つ物同士で分類する際の基本単位のひとつです。"
   },
   {
-    id: 20, name: "亜種", small_schema: "sub_species", big_schema: "SubSpecies", sort: 81,
+    id: 20, name: "亜種", small_schema: "sub_species", big_schema: "SubSpecies", plural_schema: "sub_species", sort: 81,
     note: "亜種（あしゅ、英: subspecies）は、\n
       種の下に位置する分類である。\n
       新ラテン語もしくは英語の 「subspecies」 の和訳語で、\n
@@ -158,7 +158,7 @@ Category.seed(
       一般に動物学における亜種は、分類学的に識別される地域個体群のことをいう。"
   },
   {
-    id: 21, name: "レッドリスト", small_schema: "red_list", big_schema: "RedList", sort: 90,
+    id: 21, name: "レッドリスト", small_schema: "red_list", big_schema: "RedList", plural_schema: "red_lists", sort: 90,
     note: "レッドリスト（Red List）\n
       生物種の保全状況（ほぜんじょうきょう、Conservation status、保全状態とも）とは、\n
       ある生物の種（それ以下の分類群も含む）が現在、\n
@@ -167,7 +167,7 @@ Category.seed(
       個体数の増減率や、繁殖の成功率、既知の脅威などさまざまな要因が考慮される。"
   },
   {
-    id: 22, name: "レッドリスト大項目", small_schema: "red_list_big_name", big_schema: "RedListBigName", sort: 91,
+    id: 22, name: "レッドリスト大項目", small_schema: "red_list_big_name", big_schema: "RedListBigName", plural_schema: "red_list_big_names", sort: 91,
     note: "レッドリストの大項目。"
   }
 )
