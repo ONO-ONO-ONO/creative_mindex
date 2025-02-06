@@ -50,7 +50,8 @@
     table.table
       thead
         tr
-          th 名前
+          th
+            = sort_link(@q, :name, "名前")
           th
           th 分類
           th 体長(cm)
