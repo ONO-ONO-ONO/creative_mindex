@@ -1,23 +1,26 @@
-class MastersController < ApplicationController
+class DomainsController < ApplicationController
   def index
-    @index_flg = false
-    # 一覧表示済画面からの呼び出しだったか確認
-    if params[:q].present?
-      params[:button] = params[:q][:big_schema] if params[:q][:big_schema].present?
-    end
+    # @index_flg = false
+    # # 一覧表示済画面からの呼び出しだったか確認
+    # if params[:q].present?
+    #   params[:button] = params[:q][:big_schema] if params[:q][:big_schema].present?
+    # end
 
-    # マスタが選択済かどうかを確認
-    if params[:button].present?
-      @index_flg = true
-      @schema = Category.find(params[:button]).big_schema
-    end
+    # # マスタが選択済かどうかを確認
+    # if params[:button].present?
+    #   @index_flg = true
+    #   @schema = Category.find(params[:button]).big_schema
+    # end
 
-    # @index_flgがtrueの場合は一覧表示済画面用、falseの場合はマスタ選択画面用のロジックを実行
-    @q = if @index_flg
-      @schema.constantize.ransack(params[:q])
-    else
-      Category.ransack(params[:q])
-    end
+    # # @index_flgがtrueの場合は一覧表示済画面用、falseの場合はマスタ選択画面用のロジックを実行
+    # @q = if @index_flg
+    #   @schema.constantize.ransack(params[:q])
+    # else
+    #   Category.ransack(params[:q])
+    # end
+    # @masters = @q.result.order(:sort).page(params[:page]).per(10)
+
+    @q = Domain.ransack(params[:q])
     @masters = @q.result.order(:sort).page(params[:page]).per(10)
   end
 
@@ -55,3 +58,7 @@ class MastersController < ApplicationController
 
   def approval_models =  Category.all.map { |r| r.big_schema }.freeze
 end
+
+# ToDo
+# エラーの埒があかなければ
+# 各マスタmodelのroutesを用意する方法に切り替える
