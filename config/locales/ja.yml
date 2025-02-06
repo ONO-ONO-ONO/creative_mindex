@@ -91,3 +91,10 @@ ja:
   errors:
     messages:
       record_invalid: "バリデーションに失敗しました: %{errors}"
+  views:
+    pagination:
+      previous: "前"
+      next: "次"
+      first: "最初"
+      last: "最後"
+      truncate: "..."
