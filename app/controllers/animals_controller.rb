@@ -15,12 +15,12 @@ class AnimalsController < ApplicationController
     status = params[:status] # ラジオボタンで選択された値
 
     # statusが存在する場合、statusで絞り込み
-    @animals = if status == "active"
-      @q.result.active_all.order(:name).page(params[:page]).per(10)
-    elsif status == "inactive"
+    @animals = if status == "inactive"
       @q.result.where.not(deleted_at: nil).order(:name).page(params[:page]).per(10)
-    elsif  status == "all"
+    elsif status == "all"
       @q.result.order(:name).page(params[:page]).per(10)
+    else
+      @q.result.active_all.order(:name).page(params[:page]).per(10)
     end
   end
 
