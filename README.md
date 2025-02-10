@@ -56,9 +56,17 @@ rails db:drop
 * エラーが出る場合のマスタテーブルカラム変更 ※!!! データが消えるため注意 !!!※
 ```
 (/db/schema.rb のファイル内容を手動で前削除)
-rails db:drop
-bundle exec ridgepole --config config/database.yml --env development --file db/schemas/Schemafile --apply
-rails db:migrate
+rails db:drop && \
+bundle exec ridgepole --config config/database.yml --env development --file db/schemas/Schemafile --apply && \
+rails db:migrate && \
+rails db:seed_fu && \
+
+```
+
+* マスタを更新した際に実行
+```
+bundle exec ridgepole --config config/database.yml --env development --file db/schemas/Schemafile --apply && \
+rails db:migrate && \
 rails db:seed_fu
 
 ```
