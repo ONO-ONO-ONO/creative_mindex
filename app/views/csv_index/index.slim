@@ -1,0 +1,9 @@
+= stylesheet_link_tag "csv_index/index", media: "all", "data-turbo-track": "reload"
+
+.csv-index
+  .title CSVエクスポート/インポート
+
+  .export-field
+    .export-field-title エクスポート
+    .export-btn-field
+      = link_to "動物系 全出力", csv_index_index_path(output_flg: true, contents: "animals"), class: "normal_btn2 csv-index-btn no_underbar_link"
