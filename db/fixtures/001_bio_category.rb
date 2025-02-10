@@ -1,6 +1,7 @@
 ## 生物分類系のマスタ
 
 # マスタカテゴリー
+Category.delete_all
 Category.seed(
   {
     id: 1, name: "ドメイン", small_schema: "domain", big_schema: "Domain", plural_schema: "domains", sort: 10,
@@ -173,6 +174,7 @@ Category.seed(
 )
 
 # ドメイン
+Domain.delete_all
 Domain.seed(
   { id: 1, name: "真核生物", eng_name: "eukarya", code: "D10", sort: 100 },
   { id: 2, name: "古細菌", eng_name: "archaea", code: "D11", sort: 200 },
@@ -180,6 +182,7 @@ Domain.seed(
 )
 
 # 界(かい)
+Kingdom.delete_all
 Kingdom.seed(
   { id: 1, name: "動物界", eng_name: "animal", code: "K10", sort: 100 },
   { id: 2, name: "植物界", eng_name: "plant", code: "K11", sort: 200 },
@@ -191,6 +194,7 @@ Kingdom.seed(
 )
 
 # 上門(じょうもん)
+SuperPhylum.delete_all
 SuperPhylum.seed(
   { id: 1, name: "新口動物", eng_name: "deuterostomia", code: "uP1000", parent_code: "K10", major_flg: true, sort: 100 },
   { id: 1, name: "脱皮動物", eng_name: "ecdysozoa", code: "uP1001", parent_code: "K10", major_flg: true, sort: 100 },
@@ -198,6 +202,7 @@ SuperPhylum.seed(
 )
 
 # 門(もん)
+Phylum.delete_all
 Phylum.seed(
   { id: 1, name: "脊索動物門", eng_name: "chordata", code: "P1000", parent_code: "K10", major_flg: true, sort: 100 },
   { id: 2, name: "棘皮動物門", eng_name: "echinodermata", code: "P1001", parent_code: "K10", major_flg: false, sort: 200 },
@@ -241,16 +246,19 @@ Phylum.seed(
 )
 
 # 亜門(あもん)
+SubPhylum.delete_all
 SubPhylum.seed(
   { id: 1, name: "脊椎動物亜門", eng_name: "vertebrata", code: "aP1000", parent_code: "P1000", sort: 1000 },
 )
 
 # 上綱(じょうこう)
+SuperClasses.delete_all
 SuperClasses.seed(
   { id: 1, name: "魚上綱", eng_name: "pisciformes", code: "uC10000", parent_code: "aP1000", sort: 1 },
 )
 
 # 綱(こう)
+Classes.delete_all
 Classes.seed(
   { id: 1, name: "哺乳綱", eng_name: "mammalia", code: "C10000", parent_code: "aP1000", sort: 1 },
   { id: 2, name: "鳥綱", eng_name: "aves", code: "C10001", parent_code: "aP1000", sort: 1 },
@@ -263,11 +271,13 @@ Classes.seed(
 )
 
 # 亜綱(こう)
+SubClasses.delete_all
 SubClasses.seed(
   { id: 1, name: "板鰓亜綱", eng_name: "elasmobranchii", code: "aC10000", parent_code: "C10006", sort: 1 },
 )
 
 # 上目(じょうもく)
+SuperOrder.delete_all
 SuperOrder.seed(
   { id: 1, name: "新顎上目", eng_name: "neognathae", code: "uO10000", parent_code: "C10001", sort: 1 },
   { id: 2, name: "ネズミザメ上目", eng_name: "galeomorphi", code: "uO10001", parent_code: "aC10006", sort: 1 },
@@ -275,6 +285,7 @@ SuperOrder.seed(
 )
 
 # 目(もく)
+Order.delete_all
 Order.seed(
   { id: 1, name: "ネコ目(食肉目)", eng_name: "carnivora", code: "O10000", parent_code: "C10000" },
   { id: 2, name: "ネズミ目(齧歯目)", eng_name: "rodentia", code: "O10001", parent_code: "C10000" },
@@ -317,17 +328,20 @@ Order.seed(
 )
 
 # 亜目(あもく)
+SubOrder.delete_all
 SubOrder.seed(
   { id: 1, name: "ネコ亜目", eng_name: "feliformia", code: "aO10000", parent_code: "O10000" },
   { id: 2, name: "ハクジラ亜目", eng_name: "odontoceti", code: "aO10001", parent_code: "O10003" },
 )
 
 # 上科(じょうか)
+SuperFamily.delete_all
 SuperFamily.seed(
   { id: 1, name: "マイルカ上科", eng_name: "delphinoidea", code: "sF10000", parent_code: "aO10001" },
 )
 
 # 科(か)
+Family.delete_all
 Family.seed(
   { id: 1, name: "ネコ科", eng_name: "felidae", code: "F10000", parent_code: "aO10000" },
   { id: 2, name: "イヌ科", eng_name: "canidae", code: "F10001", parent_code: "O10000" },
@@ -339,12 +353,14 @@ Family.seed(
 )
 
 # 亜科(あか)
+SubFamily.delete_all
 SubFamily.seed(
   { id: 1, name: "シャチ亜科", eng_name: "orcininae", code: "aF10000", parent_code: "F10006" },
 )
 
 
 # 属(ぞく)
+Genuses.delete_all
 Genuses.seed(
   { id: 1, name: "ネコ属", eng_name: "felis", code: "G10000", parent_code: "F10000" },
   { id: 2, name: "イヌ属", eng_name: "canis", code: "G10001", parent_code: "F10001" },
@@ -359,11 +375,13 @@ Genuses.seed(
 )
 
 # 亜属(あぞく)
+SubGenuses.delete_all
 SubGenuses.seed(
   { id: 1, name: "ネコ亜属", eng_name: "felis", code: "aG10000", parent_code: "G10000" },
 )
 
 # 種(しゅ)
+Species.delete_all
 Species.seed(
   { id: 1, name: "ヨーロッパヤマネコ", eng_name: "silvestris", code: "S10000", parent_code: "aG10000" },
   { id: 2, name: "オオカミ", eng_name: "lupus", code: "S10001", parent_code: "G10001" },
@@ -379,6 +397,7 @@ Species.seed(
 )
 
 # 亜種(あしゅ)
+SubSpecies.delete_all
 SubSpecies.seed(
   { id: 1, name: "イエネコ", eng_name: "catus", code: "aS10000", parent_code: "S10000" },
   { id: 2, name: "イエイヌ", eng_name: "familiaris", code: "aS10001", parent_code: "S10001" },
@@ -389,6 +408,7 @@ SubSpecies.seed(
 )
 
 # レッドリスト大項目
+RedListBigName.delete_all
 RedListBigName.seed(
   { id: 1, name: "低リスク", code: "B_LC", sort: 10 },
   { id: 2, name: "絶滅危惧", code: "B_EN", sort: 20 },
@@ -399,6 +419,7 @@ RedListBigName.seed(
 
 
 # レッドリスト
+RedList.delete_all
 RedList.seed(
   { id: 1, name: "LC: 低危険種", big_code: "B_LC", code: "LC", sort: 10 },
   { id: 2, name: "NT: 準絶滅危惧", big_code: "B_LC", code: "NT", sort: 11 },
