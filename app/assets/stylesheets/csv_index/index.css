@@ -1,0 +1,26 @@
+.csv-index {
+  padding: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.export-field {
+  padding: 20px;
+}
+
+.export-field-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.export-btn-field {
+  display: flex;
+}
+
+.csv-index-btn {
+  font-size: 18px;
+  padding: 20px;
+}

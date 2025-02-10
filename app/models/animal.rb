@@ -100,4 +100,102 @@ class Animal < ApplicationRecord
   def get_icon_img_url
     self.animal_image&.find_by(icon_flg: true)&.img_url
   end
+
+  # CSVヘッダー行
+  def self.csv_header
+    [
+      self.name.constantize.human_attribute_name(:id),
+      self.name.constantize.human_attribute_name(:name),
+      self.name.constantize.human_attribute_name(:scientific_name),
+      self.name.constantize.human_attribute_name(:wa_name),
+      self.name.constantize.human_attribute_name(:kanji_name),
+      self.name.constantize.human_attribute_name(:avg_long),
+      self.name.constantize.human_attribute_name(:min_long),
+      self.name.constantize.human_attribute_name(:max_long),
+      self.name.constantize.human_attribute_name(:avg_long_tail),
+      self.name.constantize.human_attribute_name(:min_long_tail),
+      self.name.constantize.human_attribute_name(:max_long_tail),
+      self.name.constantize.human_attribute_name(:avg_tall),
+      self.name.constantize.human_attribute_name(:min_tall),
+      self.name.constantize.human_attribute_name(:max_tall),
+      self.name.constantize.human_attribute_name(:avg_weight),
+      self.name.constantize.human_attribute_name(:min_weight),
+      self.name.constantize.human_attribute_name(:max_weight),
+      self.name.constantize.human_attribute_name(:domain_code),
+      self.name.constantize.human_attribute_name(:kingdom_code),
+      self.name.constantize.human_attribute_name(:super_phylum_code),
+      self.name.constantize.human_attribute_name(:phylum_code),
+      self.name.constantize.human_attribute_name(:sub_phylum_code),
+      self.name.constantize.human_attribute_name(:super_class_code),
+      self.name.constantize.human_attribute_name(:class_code),
+      self.name.constantize.human_attribute_name(:sub_class_code),
+      self.name.constantize.human_attribute_name(:infra_class_code),
+      self.name.constantize.human_attribute_name(:super_order_code),
+      self.name.constantize.human_attribute_name(:order_code),
+      self.name.constantize.human_attribute_name(:sub_order_code),
+      self.name.constantize.human_attribute_name(:infra_order_code),
+      self.name.constantize.human_attribute_name(:super_family_code),
+      self.name.constantize.human_attribute_name(:family_code),
+      self.name.constantize.human_attribute_name(:sub_family_code),
+      self.name.constantize.human_attribute_name(:genus_code),
+      self.name.constantize.human_attribute_name(:sub_genus_code),
+      self.name.constantize.human_attribute_name(:species_code),
+      self.name.constantize.human_attribute_name(:sub_species_code),
+      self.name.constantize.human_attribute_name(:red_list_code),
+      self.name.constantize.human_attribute_name(:note),
+      self.name.constantize.human_attribute_name(:deleted_at)
+    ]
+  end
+
+  # CSV出力データ
+  def self.export_csv_data(records)
+    export_csv_data = CSV.generate(headers: true, encoding: "UTF-8") do |csv|
+      csv << self.name.constantize.csv_header # ヘッダー行
+      records.each do |r|
+        csv << [
+          r.id,
+          r.name,
+          r.scientific_name,
+          r.wa_name,
+          r.kanji_name,
+          r.avg_long,
+          r.min_long,
+          r.max_long,
+          r.avg_long_tail,
+          r.min_long_tail,
+          r.max_long_tail,
+          r.avg_tall,
+          r.min_tall,
+          r.max_tall,
+          r.avg_weight,
+          r.min_weight,
+          r.max_weight,
+          r.domain_code,
+          r.kingdom_code,
+          r.super_phylum_code,
+          r.phylum_code,
+          r.sub_phylum_code,
+          r.super_class_code,
+          r.class_code,
+          r.sub_class_code,
+          r.infra_class_code,
+          r.super_order_code,
+          r.order_code,
+          r.sub_order_code,
+          r.infra_order_code,
+          r.super_family_code,
+          r.family_code,
+          r.sub_family_code,
+          r.genus_code,
+          r.sub_genus_code,
+          r.species_code,
+          r.sub_species_code,
+          r.red_list_code,
+          r.note,
+          r.deleted_at
+        ]
+      end
+    end
+    export_csv_data
+  end
 end

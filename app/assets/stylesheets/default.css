@@ -40,8 +40,8 @@
 }
 
 .red_btn1 {
-  background: #eea2a1; /* ボタンの色 */
-  border: 1px solid #eea2a1; /* ボタン枠線の太さ & 色 */
+  background: #dabd94; /* ボタンの色 */
+  border: 1px solid #dabd94; /* ボタン枠線の太さ & 色 */
   border-radius: 4px; /* ボタンの角丸 */
   color: aliceblue;
 }
