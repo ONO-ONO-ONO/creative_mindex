@@ -4,6 +4,14 @@
   .title CSVエクスポート/インポート
 
   .export-field
-    .export-field-title エクスポート
-    .export-btn-field
-      = link_to "動物系 全出力", csv_index_index_path(output_flg: true, contents: "animals"), class: "normal_btn2 csv-index-btn no_underbar_link"
+    .csv-index-field-title エクスポート
+    .csv-index-btn-field
+      .csv-index-btn-area
+        = link_to "動物系 全出力", csv_index_index_path(output_flg: true, contents: "animals"), class: "normal_btn2 csv-index-btn no_underbar_link"
+
+    .csv-index-field-title.import-field インポート
+    = form_with url: import_csv_index_index_path, method: :post, multipart: true do |form|
+      .csv-index-btn-field
+        .csv-index-btn-area
+          = form.file_field :file
+          = form.submit "インポート実行", class: "normal_btn2 csv-index-btn"

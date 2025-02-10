@@ -11,16 +11,25 @@
   padding: 20px;
 }
 
-.export-field-title {
+.csv-index-field-title {
+  padding-bottom: 24px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.export-btn-field {
+.csv-index-btn-field {
   display: flex;
+}
+
+.csv-index-btn-area {
+  padding: 0px 10px;
 }
 
 .csv-index-btn {
   font-size: 18px;
   padding: 20px;
+}
+
+.import-field {
+  padding-top: 40px;
 }

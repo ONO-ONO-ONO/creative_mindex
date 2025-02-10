@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   # CSVインポート/エクスポート
-  resources :csv_index, only: [ :index ]
+  resources :csv_index, only: [ :index ] do
+    collection do
+      post :import
+    end
+  end
 
   # マスタ系
   resources :categories, only: [ :index ] do

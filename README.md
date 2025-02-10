@@ -59,7 +59,7 @@ rails db:drop
 rails db:drop && \
 bundle exec ridgepole --config config/database.yml --env development --file db/schemas/Schemafile --apply && \
 rails db:migrate && \
-rails db:seed_fu && \
+rails db:seed_fu
 
 ```
 
