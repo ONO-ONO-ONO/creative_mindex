@@ -3,7 +3,12 @@ class CsvIndexController < ApplicationController
   require "zip"
 
   def index
-    # 出力ボタンをクリックした場合
+    @import_select = [
+      { name: "動物", code: "animal" },
+      { name: "動物画像", code: "animal_image" }
+    ]
+
+    # アウトプット ボタンをクリックした場合
     if params[:output_flg]
       # クリックしたボタン毎の処理
       case params[:contents]
@@ -39,6 +44,20 @@ class CsvIndexController < ApplicationController
     ensure
       temp_file.close
       temp_file.unlink
+    end
+  end
+
+  def import
+    if params[:file].present?
+      case params[:import_select]
+      when "animal"
+        Animal.import(params[:file])
+      when "animal_image"
+        AnimalImage.import(params[:file])
+      end
+      redirect_to csv_index_index_path, notice: "CSVのインポートが完了しました"
+    else
+      redirect_to csv_index_index_path, alert: "ファイルを選択してください"
     end
   end
 
