@@ -33,3 +33,17 @@
 .import-field {
   padding-top: 40px;
 }
+
+.csv-index-import-btn {
+  padding: 6px 32px;
+}
+
+.csv-index-select-file-area {
+  padding-top: 27px;
+  padding-left: 10px;
+}
+
+.csv-index-select-file-field {
+  padding-top: 10px;
+  padding-left: 10px;
+}

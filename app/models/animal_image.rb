@@ -32,4 +32,20 @@ class AnimalImage < ApplicationRecord
     end
     export_csv_data
   end
+
+  # CSVインポート
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      animal = find_by(id: row["﻿id"]) || new
+      animal.attributes = row.to_hash.slice(
+        "id",
+        "animal_id",
+        "img_url",
+        "sort",
+        "main_flg",
+        "icon_flg"
+        ) # 必要なカラムを指定
+      animal.save!
+    end
+  end
 end
