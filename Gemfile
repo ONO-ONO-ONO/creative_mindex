@@ -49,6 +49,7 @@ gem "binding_of_caller", "~> 1.0.1"
 gem "ransack"
 gem "kaminari"
 gem "kaminari-bootstrap"
+gem "smarter_csv"
 
 # bootstrap & scss系
 gem "bootstrap", "~> 5.3.0"

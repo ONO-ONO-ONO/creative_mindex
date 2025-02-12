@@ -1,0 +1,22 @@
+= stylesheet_link_tag "csv_index/index", media: "all", "data-turbo-track": "reload"
+
+.csv-index
+  .title CSVエクスポート/インポート
+
+  .export-field
+    .csv-index-field-title エクスポート
+    .csv-index-btn-field
+      .csv-index-btn-area
+        = link_to "動物系 全出力", csv_index_index_path(output_flg: true, contents: "animals"), class: "normal_btn2 csv-index-btn no_underbar_link"
+
+    .csv-index-field-title.import-field インポート
+    = form_with url: import_csv_index_index_path, method: :post, multipart: true do |f|
+      .csv-index-btn-field
+        .csv-index-btn-area
+          = f.label "インポートファイル種別の選択"
+          = f.collection_select :import_select, @import_select.map { |i| [i[:name], i[:code]] }, :last, :first, { prompt: "------選択してください------" }, class: "form-control csv-index-select-form"
+        .csv-index-select-file-area
+          = f.file_field :file
+      .csv-index-select-file-field
+        
+        = f.submit "インポート実行", class: "normal_btn1 csv-index-import-btn"

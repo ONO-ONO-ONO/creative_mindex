@@ -1,7 +1,8 @@
 ja:
   activerecord:
     models:
-      animal: ユーザー
+      animal: 動物
+      animal_image: 動物画像
       domain: ドメイン
       kingdom: 界
       super_phylum: 上門
@@ -26,6 +27,7 @@ ja:
       red_list_big_name: レッドリスト大項目
     attributes:
       animal:
+        id: ID
         name: 名前
         scientific_name: 学名
         eng_name: 英名
@@ -65,6 +67,14 @@ ja:
         sub_species_code: 亜種
         red_list_code: レッドリスト
         note: 説明
+        deleted_at: 削除日時
+      animal_image:
+        id: ID
+        animal_id: 動物ID
+        img_url: 画像URL
+        sort: ソート番号
+        main_flg: メインフラグ
+        icon_flg: アイコンフラグ
       domain:
         name: 名前
         eng_name: 英名

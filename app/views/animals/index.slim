@@ -62,9 +62,9 @@
           tr
             td = animal.name
             td
-              button.normal_btn2.index_btn_area
-                = link_to "詳細", "/animals/#{animal.id}", class: "no_underbar_link"
               button.normal_btn1.index_btn_area
+                = link_to "詳細", "/animals/#{animal.id}", class: "no_underbar_link"
+              button.normal_btn2.index_btn_area
                 = link_to "編集", "/animals/#{animal.id}/edit", class: "no_underbar_link"
               - if animal.deleted_at.present?
                 button.red_btn2.index_btn_area
