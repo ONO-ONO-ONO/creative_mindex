@@ -54,7 +54,7 @@ gem "smarter_csv"
 # bootstrap & scss系
 gem "bootstrap", "~> 5.3.0"
 gem "jquery-rails"
-gem "sprockets-rails", "~> 3.4.2"
+gem "sprockets-rails", "~> 3.5.2"
 gem "sprockets", "~> 3.7.3"
 gem "sass-rails", "~> 6.0.0"
 
